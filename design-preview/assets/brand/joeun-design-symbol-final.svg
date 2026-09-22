@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 135 127" role="img" aria-labelledby="title desc">
+  <title id="title">조은 디자인 최종 심볼</title>
+  <desc id="desc">왼쪽 위와 오른쪽 아래 모서리, 중앙의 J, 오른쪽 위 점으로 구성된 심볼</desc>
+  <g fill="none" stroke="#1c1c1a" stroke-width="6" stroke-linecap="butt" stroke-linejoin="miter">
+    <path d="M26 50V23H53"/>
+    <path d="M106 76V103H79"/>
+  </g>
+  <path d="M70 41V64c0 7-4 10-10 10h-4" fill="none" stroke="#1c1c1a" stroke-width="6" stroke-linecap="butt" stroke-linejoin="round"/>
+  <circle cx="98" cy="29" r="5" fill="#456148"/>
+</svg>

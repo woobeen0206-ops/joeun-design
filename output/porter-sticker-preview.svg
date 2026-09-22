@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="800" viewBox="0 0 1400 800">
+  <title>포터 트럭 조은 디자인 스티커 부착 예시</title>
+  <rect width="1400" height="800" fill="#f3f1eb"/>
+  <text x="90" y="96" fill="#263e32" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="38" font-weight="700">포터 트럭 스티커 시안</text>
+  <text x="92" y="138" fill="#66746a" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="20">적재함 양옆 · 멀리서 읽히는 상호와 연락처 중심</text>
+  <ellipse cx="699" cy="638" rx="573" ry="35" fill="#d8d8d2"/>
+  <path d="M170 357h221l46-103h164l55 55v247H170z" fill="#fff" stroke="#a5aca9" stroke-width="5"/>
+  <path d="M445 275h143l41 42v91H405z" fill="#d9e6e7" stroke="#a5aca9" stroke-width="5"/>
+  <path d="M423 333h197" stroke="#a5aca9" stroke-width="4"/>
+  <path d="M170 433h503v124H170z" fill="#f7f8f6" stroke="#a5aca9" stroke-width="5"/>
+  <path d="M651 284h591v277H651z" fill="#fff" stroke="#a5aca9" stroke-width="5"/>
+  <path d="M667 308h557v216H667z" fill="#245642"/>
+  <path d="M667 308h10v216h-10z" fill="#d7c8a5"/>
+  <g fill="none" stroke="#e7e3d7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M696 374v-24h23M770 443v22h-23"/>
+    <path d="M732 368v36c0 11-4 16-13 16"/>
+  </g>
+  <circle cx="755" cy="362" r="6" fill="#d7c8a5"/>
+  <text x="793" y="397" fill="#fffdf7" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="42" font-weight="700" letter-spacing="-2">조은 디자인</text>
+  <text x="795" y="420" fill="#e7e3d7" font-family="Arial, sans-serif" font-size="11" letter-spacing="2.3">JOEUN DESIGN STUDIO</text>
+  <line x1="698" y1="453" x2="1194" y2="453" stroke="#d7c8a5"/>
+  <text x="697" y="491" fill="#fffdf7" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="17" font-weight="600">아파트 인테리어 · 리모델링</text>
+  <text x="1195" y="494" text-anchor="end" fill="#fffdf7" font-family="Arial, sans-serif" font-size="25" font-weight="700">010-3371-7644</text>
+  <path d="M177 558h1065v50H177z" fill="#edf0ec" stroke="#a5aca9" stroke-width="5"/>
+  <circle cx="313" cy="605" r="60" fill="#263e32"/><circle cx="313" cy="605" r="30" fill="#c8cfca"/>
+  <circle cx="1074" cy="605" r="60" fill="#263e32"/><circle cx="1074" cy="605" r="30" fill="#c8cfca"/>
+  <text x="90" y="727" fill="#66746a" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="20">권장 시작 크기 120 × 35 cm · 실제 차량 적재함 실측 후 최종 조정</text>
+</svg>

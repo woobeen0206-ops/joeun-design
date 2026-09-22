@@ -1,0 +1,311 @@
+{
+  "attached": 66,
+  "added": 37,
+  "skipped": 29,
+  "album_total": 53,
+  "added_files": [
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-05-57 001.jpeg",
+      "destination": "leak-waterproofing/017.webp",
+      "source_sha256": "d687bba94bbdacd6988e42c9aba22289106bb58106375ae6bfd3685cacedc276"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-05-57 002.jpeg",
+      "destination": "leak-waterproofing/018.webp",
+      "source_sha256": "2331d8c32bcdf1ca37e3e7a90ca30066ec119ad5deb8982fd9525908202f3abc"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-05-57 003.jpeg",
+      "destination": "leak-waterproofing/019.webp",
+      "source_sha256": "9e4309bb770b3032ead3cc37af18cd9469060a5ea091fc4fc3572b3cb0c05811"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-05-57 004.jpeg",
+      "destination": "leak-waterproofing/020.webp",
+      "source_sha256": "58b2e9632cfca637cadda4c812876a79e073a217291ff81b1f5bb5e9e46b8163"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-05-57 005.jpeg",
+      "destination": "leak-waterproofing/021.webp",
+      "source_sha256": "fdacdbe5442dc487c53428babd269f789af1d431d97a2e3f5d2d01e0780df3fa"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-05-57 006.jpeg",
+      "destination": "leak-waterproofing/022.webp",
+      "source_sha256": "aa7e315a8c017e7df8af0ad78737b50c7f3d916ff35f42e95572c9a54b0c602f"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-05-57 007.jpeg",
+      "destination": "leak-waterproofing/023.webp",
+      "source_sha256": "ff3177f967f92841b820dfca8dfcb49c7874d039508e46fa22ca2a95caca0a51"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-05-57 008.jpeg",
+      "destination": "leak-waterproofing/024.webp",
+      "source_sha256": "937f9972b98b77de348c9c0b5eb11f1f66870f9433a83149bd7768e02567ffc6"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-05-57 009.jpeg",
+      "destination": "leak-waterproofing/025.webp",
+      "source_sha256": "5b4cc5bc88bbc852a43cb9286783208ad70aa22263c6096f057581c29d1d2b75"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-05-57 010.jpeg",
+      "destination": "leak-waterproofing/026.webp",
+      "source_sha256": "e9f6b15a45878f7984f2ca51af8eec8ebbcdeba06b02af37bb8da78c66aaec8c"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-05-57 011.jpeg",
+      "destination": "leak-waterproofing/027.webp",
+      "source_sha256": "ba401517b0e06dbaec321607537b7593e2c7bd2391d5311bb9846fd20a7b1bc9"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-05-57 012.jpeg",
+      "destination": "leak-waterproofing/028.webp",
+      "source_sha256": "ec83c4973b239587c6269ab9ba2f114a4e4514a8b73f20c9c23a27b7bd27fca7"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-05-57 013.jpeg",
+      "destination": "leak-waterproofing/029.webp",
+      "source_sha256": "8aba0ebc1af98b7ddf1385ec5d65690cf1fa78fb309b897a815b0d77a25c1a2f"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-05-58 014.jpeg",
+      "destination": "leak-waterproofing/030.webp",
+      "source_sha256": "21a4af9bcd21ad5e7668a69d12e0025f3ac2801f7ade6981655324faf96c110b"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-05-58 015.jpeg",
+      "destination": "leak-waterproofing/031.webp",
+      "source_sha256": "1aa93986d2e7be8c060acd915a66706bf98eebafb538b139c3fec6dca18fe3de"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-05-58 016.jpeg",
+      "destination": "leak-waterproofing/032.webp",
+      "source_sha256": "44762080adfce3ecd97015d72fa9cc3888adbd994bd241ed7565f053846ae0b7"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-05-58 017.jpeg",
+      "destination": "leak-waterproofing/033.webp",
+      "source_sha256": "65c7c35aa1dba333a094154575cdb0ec41f24f7588f150df5c824e5baaa9304b"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-05-58 018.jpeg",
+      "destination": "leak-waterproofing/034.webp",
+      "source_sha256": "6b14b6649ea2f36ed49652d83f8665b10a4e0bbf1f95bc2ca26c9f100a4d559f"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-05-59 019.jpeg",
+      "destination": "leak-waterproofing/035.webp",
+      "source_sha256": "cde0b506ff8c371310db89622bb7fcf89b15bd369f8fd730ef9905db2f29a526"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-05-59 020.jpeg",
+      "destination": "leak-waterproofing/036.webp",
+      "source_sha256": "f416f89254e96afb6be00f0405d8dea84a332cbc641c2c2c00a80bf6b1e8770e"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-05-59 021.jpeg",
+      "destination": "leak-waterproofing/037.webp",
+      "source_sha256": "a2377bcf31c4e3b314552c083f544f33c101d894969ce80ebb40df81f5b9a1a1"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-05-59 022.jpeg",
+      "destination": "leak-waterproofing/038.webp",
+      "source_sha256": "b17a3adbed31db8d3566eac7dd306be9cfb54e8d7a5734547fe68bae6ce49acf"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-05-59 023.jpeg",
+      "destination": "leak-waterproofing/039.webp",
+      "source_sha256": "0b291128a2d1dc2d63af24f78ff433117841080d17b8791c5d38147bf2f342fb"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-05-59 024.jpeg",
+      "destination": "leak-waterproofing/040.webp",
+      "source_sha256": "8c1344b5e5862b1096b32a9945299c7c2770c7e7ad5fe803c39cbd98cd3d5cdd"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-06-00 025.jpeg",
+      "destination": "leak-waterproofing/041.webp",
+      "source_sha256": "b3a7bb9ee2b24aeb2c456bb08af15fecf7f1c4ea2cecf9ecc3b7b8476de9c157"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-06-00 026.jpeg",
+      "destination": "leak-waterproofing/042.webp",
+      "source_sha256": "bb2febab07183bc6d7aef496e3a694cdad10e092fe1df1c7cdeb3c9576d7cf34"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-06-00 027.jpeg",
+      "destination": "leak-waterproofing/043.webp",
+      "source_sha256": "9ba5c0b22e953f548b3d9636bf291d77deb1d58d0e6cf7939c3869e10b29fcd1"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-06-00 028.jpeg",
+      "destination": "leak-waterproofing/044.webp",
+      "source_sha256": "fb7b5e227db92b67632070d9c0aebabaafbee6568dda780da0cae415d6bdfd92"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-06-00 029.jpeg",
+      "destination": "leak-waterproofing/045.webp",
+      "source_sha256": "13a577649b862e59f875c235c11889c339f67f41a27ae494eee0df4f81c51bd1"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-06-00 030.jpeg",
+      "destination": "leak-waterproofing/046.webp",
+      "source_sha256": "4bb6d23dd2f77f851bd288392ed16fb2a0bbb13b74c61e05768b3304a7fffbda"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-06-10 001.jpeg",
+      "destination": "leak-waterproofing/047.webp",
+      "source_sha256": "950d3167ada0aa1b2742b60bc3b84589ce825d92951200b782f59d9c769bdcf4"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-06-10 003.jpeg",
+      "destination": "leak-waterproofing/048.webp",
+      "source_sha256": "1bce9eff683c49c547264487746cb21276293fedf04fc14d374cde61baa5e556"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-06-10 004.jpeg",
+      "destination": "leak-waterproofing/049.webp",
+      "source_sha256": "f06d9596d140ec5be271a3bad38b26b99ee8af94c2951549f5a59cbbe55dbd82"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-06-10 005.jpeg",
+      "destination": "leak-waterproofing/050.webp",
+      "source_sha256": "29e04e95a1f408cd48f63be3e81be05e711e1b89e405bbb28fa60adbccae6c38"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-06-11 006.jpeg",
+      "destination": "leak-waterproofing/051.webp",
+      "source_sha256": "54e482c1f5e01d7e01389483663e4f6aec99e6f03dd20b45b64c9398a6a81454"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-06-11 007.jpeg",
+      "destination": "leak-waterproofing/052.webp",
+      "source_sha256": "2c8ecda12d756b4598ccac8d6d6550431836af45fa0368b9fa5204216ac65983"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-06-11 008.jpeg",
+      "destination": "leak-waterproofing/053.webp",
+      "source_sha256": "3cf99e30f7c633327fc7ed5a146c2278dadb97351d186cb0eb4a944b0d08a23b"
+    }
+  ],
+  "skipped_files": [
+    {
+      "source": "KakaoTalk_Photo_2026-09-12-11-51-10 004.jpeg",
+      "matches": "04.jpeg"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-12-11-56-34 001.jpeg",
+      "matches": "001.jpeg"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-12-11-56-34 002.jpeg",
+      "matches": "002.jpeg"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-12-11-56-34 003.jpeg",
+      "matches": "003.jpeg"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-12-11-56-34 004.jpeg",
+      "matches": "004.jpeg"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-12-11-56-34 005.jpeg",
+      "matches": "005.jpeg"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-12-11-56-34 006.jpeg",
+      "matches": "006.jpeg"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-12-11-56-34 007.jpeg",
+      "matches": "007.jpeg"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-12-11-56-34 008.jpeg",
+      "matches": "008.jpeg"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-12-11-56-34 009.jpeg",
+      "matches": "009.jpeg"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-12-11-56-34 010.jpeg",
+      "matches": "010.jpeg"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-12-11-56-34 011.jpeg",
+      "matches": "011.jpeg"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-12-11-56-34 012.jpeg",
+      "matches": "012.jpeg"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-12-11-56-34 013.jpeg",
+      "matches": "013.jpeg"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-12-11-56-34 014.jpeg",
+      "matches": "014.jpeg"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-12-11-56-34 015.jpeg",
+      "matches": "015.jpeg"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-12-11-56-34 016.jpeg",
+      "matches": "016.jpeg"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-06-10 002.jpeg",
+      "matches": "KakaoTalk_Photo_2026-09-14-09-06-10 001.jpeg"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-06-11 009.jpeg",
+      "matches": "KakaoTalk_Photo_2026-09-14-09-05-57 010.jpeg"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-06-11 010.jpeg",
+      "matches": "KakaoTalk_Photo_2026-09-14-09-05-57 011.jpeg"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-06-11 011.jpeg",
+      "matches": "KakaoTalk_Photo_2026-09-14-09-05-57 012.jpeg"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-06-12 012.jpeg",
+      "matches": "KakaoTalk_Photo_2026-09-14-09-05-57 013.jpeg"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-06-12 013.jpeg",
+      "matches": "KakaoTalk_Photo_2026-09-14-09-05-58 014.jpeg"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-06-12 014.jpeg",
+      "matches": "KakaoTalk_Photo_2026-09-14-09-05-58 015.jpeg"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-06-12 015.jpeg",
+      "matches": "KakaoTalk_Photo_2026-09-14-09-05-58 016.jpeg"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-06-12 016.jpeg",
+      "matches": "KakaoTalk_Photo_2026-09-14-09-05-58 017.jpeg"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-06-13 017.jpeg",
+      "matches": "KakaoTalk_Photo_2026-09-14-09-05-58 018.jpeg"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-06-13 018.jpeg",
+      "matches": "KakaoTalk_Photo_2026-09-14-09-05-59 019.jpeg"
+    },
+    {
+      "source": "KakaoTalk_Photo_2026-09-14-09-06-13 019.jpeg",
+      "matches": "KakaoTalk_Photo_2026-09-14-09-05-59 020.jpeg"
+    }
+  ]
+}

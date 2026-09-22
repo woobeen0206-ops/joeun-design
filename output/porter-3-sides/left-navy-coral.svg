@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500mm" height="150mm" viewBox="0 0 1500 150">
+  <title>포터Ⅱ 적재함 left 스티커 시안 — 1500 × 150 mm</title>
+  <rect width="1500" height="150" rx="5" fill="#102A43"/>
+  <rect x="0" width="7" height="150" fill="#FF7A6B"/>
+  <g transform="translate(48 36) scale(.88)" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="butt" stroke-linejoin="miter">
+    <path d="M3 30V3h27"/>
+    <path d="M83 56v27H56"/>
+    <path d="M47 21v23c0 7-4 10-10 10h-4" stroke-linejoin="round"/>
+  </g>
+  <circle cx="114" cy="44" r="4.4" fill="#FF7A6B"/>
+  <text x="145" y="79" fill="#FFFFFF" font-family="'Noto Sans KR', 'Apple SD Gothic Neo', Arial, sans-serif" font-size="58" font-weight="700" letter-spacing="-3">조은 디자인</text>
+  <text x="145" y="124" fill="#DCE4EA" font-family="'Noto Sans KR', 'Apple SD Gothic Neo', Arial, sans-serif" font-size="19" font-weight="600">좋은 공간엔, 이유가 있습니다.</text>
+  <text x="1448" y="94" text-anchor="end" fill="#FF7A6B" font-family="Arial, sans-serif" font-size="60" font-weight="700" letter-spacing="-1">010-3371-7644</text>
+  <text x="1448" y="124" text-anchor="end" fill="#DCE4EA" font-family="'Noto Sans KR', 'Apple SD Gothic Neo', Arial, sans-serif" font-size="17" font-weight="600">아파트 인테리어 · 리모델링</text>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-labelledby="title desc">
+  <title id="title">조은 디자인 심볼</title>
+  <desc id="desc">얼굴을 연상시키는 J 심볼</desc>
+  <g fill="none" stroke="#263e32" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 32V12h20M88 68v20H68"/>
+    <path d="M52 29V58C52 66 48 71 42 69"/>
+  </g>
+  <circle cx="72" cy="24" r="7" fill="#245642"/>
+</svg>
+

@@ -1,0 +1,7 @@
+J. S. Bach — Orchestral Suite No. 3 in D major, BWV 1068 — Gavotte
+Conductor: Adolf Busch; Adolf Busch Chamber Players. Recording 1936; first release 1937.
+Source: https://commons.wikimedia.org/wiki/File:PDP-CH_-_Adolf_Busch_Chamber_Players_-_Adolf_Busch_-_Suite_No._3_in_D_major,_BWV_1068_-_Gavotte_-_Bach_-_Hmv-db3019-2ea3898.flac
+Swiss Foundation Public Domain collection; source marked Public Domain.
+Wikimedia MP3 transcode, unmodified. Retrieved 2026-09-17.
+
+Restoration: click reduction, 100 Hz high-pass, 6500 Hz low-pass, sampled spectral noise reduction 18 dB, brief endpoint fades; MP3 160 kbps. Original preserved as bach-gavotte.mp3.

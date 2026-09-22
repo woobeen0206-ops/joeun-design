@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1000" viewBox="0 0 1500 1000">
+ <defs>
+  <style>
+   text{font-family:"Apple SD Gothic Neo","Noto Sans KR",sans-serif;fill:#222831}.outer{stroke:#232a32;stroke-width:16;fill:none}.wall{stroke:#9b7651;stroke-width:9;fill:none}.glass{stroke:#2998ba;stroke-width:10;fill:none;stroke-dasharray:16 9}.door{stroke:#232a32;stroke-width:4;fill:none}.room{font-size:25px;font-weight:700;text-anchor:middle}.sub{font-size:17px;fill:#66707a;text-anchor:middle}.dim{stroke:#737b85;stroke-width:2;fill:none}.note{font-size:18px;fill:#4e5862}
+  </style>
+ </defs>
+ <rect width="1500" height="1000" fill="#f7f5f1"/>
+ <text x="70" y="62" font-size="34" font-weight="800">8층 사무공간 · Model 기준 공간구성안</text>
+ <text x="70" y="95" font-size="18" fill="#646c75">출입구·기존 구획을 기준으로 한 배치 초안 / 단위와 구조 치수는 원본 CAD 확인</text>
+ <rect x="250" y="170" width="820" height="590" fill="#f2f0eb"/>
+ <path class="outer" d="M250 170H1070V760H250Z"/>
+ <!-- existing shell/partitions read from Model -->
+ <path class="wall" d="M250 300H1070 M250 500H1070 M470 300V760 M760 300V760 M920 170V500"/>
+ <path class="glass" d="M250 170H1070 M250 170V500"/>
+ <!-- functional overlays -->
+ <rect x="258" y="180" width="200" height="112" fill="#eadfcd"/>
+ <rect x="478" y="180" width="270" height="112" fill="#ece5da"/>
+ <rect x="768" y="180" width="292" height="112" fill="#e7dfcf"/>
+ <rect x="258" y="310" width="200" height="180" fill="#e8e4ee"/>
+ <rect x="478" y="310" width="270" height="180" fill="#e8eef1"/>
+ <rect x="768" y="310" width="292" height="180" fill="#e6eced"/>
+ <rect x="258" y="510" width="200" height="240" fill="#e9edf0"/>
+ <rect x="478" y="510" width="270" height="240" fill="#f0e7da"/>
+ <rect x="768" y="510" width="292" height="240" fill="#e9dfcf"/>
+ <text x="355" y="235" class="room">대회의실</text><text x="355" y="263" class="sub">8~10인 / 방음 보강</text>
+ <text x="613" y="235" class="room">소회의실</text><text x="613" y="263" class="sub">4~6인</text>
+ <text x="914" y="235" class="room">탕비·서버</text><text x="914" y="263" class="sub">기존 설비 인접</text>
+ <text x="355" y="390" class="room">VIP실</text><text x="355" y="418" class="sub">외부 방문·비공개 미팅</text>
+ <text x="613" y="390" class="room">오픈 업무공간</text><text x="613" y="418" class="sub">8~12석 / 가변 책상</text>
+ <text x="914" y="390" class="room">협업·콘텐츠존</text><text x="914" y="418" class="sub">촬영·브레인스토밍</text>
+ <text x="355" y="620" class="room">갤러리 동선</text><text x="355" y="648" class="sub">아티스트·브랜드 월</text>
+ <text x="613" y="620" class="room">리셉션·대기</text><text x="613" y="648" class="sub">현관 중심</text>
+ <text x="914" y="620" class="room">대표실</text><text x="914" y="648" class="sub">출입구 우측 유리 파티션</text>
+ <!-- entrance projection -->
+ <path class="outer" d="M560 760V840H760V760"/><path class="door" d="M635 840V780 A75 75 0 0 1 710 840"/>
+ <text x="660" y="884" class="room" font-size="22">주출입구</text>
+ <path class="glass" d="M760 515V750"/>
+ <g transform="translate(1160,180)">
+  <text x="0" y="0" font-size="25" font-weight="800">적용 기준</text>
+  <line x1="0" y1="35" x2="70" y2="35" class="outer"/><text x="85" y="42" class="note">기존 외곽·벽체</text>
+  <line x1="0" y1="75" x2="70" y2="75" class="wall"/><text x="85" y="82" class="note">공간 구획</text>
+  <line x1="0" y1="115" x2="70" y2="115" class="glass"/><text x="85" y="122" class="note">유리·창호</text>
+  <text x="0" y="190" class="note">• 오픈 천장 / 기준 2,400</text><text x="0" y="222" class="note">• 배선 트레이 정리</text><text x="0" y="254" class="note">• 모든 실은 사무 용도</text>
+  <rect x="-15" y="315" width="285" height="150" rx="12" fill="#fff2d8" stroke="#c9953f" stroke-width="2"/>
+  <text x="0" y="350" font-size="21" font-weight="800">현장 확인 필요</text><text x="0" y="383" class="note">CAD 원본의 실치수·창호·</text><text x="0" y="413" class="note">기둥 중심선을 시공 전에 검토</text>
+ </g>
+</svg>

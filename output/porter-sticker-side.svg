@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200mm" height="350mm" viewBox="0 0 1200 350">
+  <title>조은 디자인 포터 적재함 옆면 스티커 시안</title>
+  <rect width="1200" height="350" rx="12" fill="#245642"/>
+  <path d="M0 0h18v350H0z" fill="#d7c8a5"/>
+  <g fill="none" stroke="#e7e3d7" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M72 112V62h48M224 238v50h-48"/>
+    <path d="M145 102v78c0 22-10 35-29 35"/>
+  </g>
+  <circle cx="194" cy="88" r="12" fill="#d7c8a5"/>
+  <text x="270" y="153" fill="#fffdf7" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="76" font-weight="700" letter-spacing="-5">조은 디자인</text>
+  <text x="275" y="198" fill="#e7e3d7" font-family="Arial, sans-serif" font-size="23" letter-spacing="6">JOEUN DESIGN STUDIO</text>
+  <line x1="78" y1="250" x2="1124" y2="250" stroke="#d7c8a5" stroke-width="2" opacity=".8"/>
+  <text x="78" y="310" fill="#fffdf7" font-family="Arial, 'Noto Sans KR', sans-serif" font-size="33" font-weight="600">아파트 인테리어 · 리모델링</text>
+  <text x="1122" y="311" text-anchor="end" fill="#fffdf7" font-family="Arial, sans-serif" font-size="49" font-weight="700" letter-spacing="-1">010-3371-7644</text>
+</svg>

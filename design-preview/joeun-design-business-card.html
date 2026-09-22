@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>조은 디자인 · 명함 시안</title>
+  <style>
+    :root{--ink:#263e32;--green:#245642;--soft:#748078;--cream:#f4f2eb;--paper:#fffdf8;--line:#d9ddd4;--lime:#c7d994}
+    *{box-sizing:border-box}html{background:var(--cream)}body{margin:0;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;-webkit-font-smoothing:antialiased}
+    .stage{min-height:100vh;padding:clamp(30px,7vw,80px) 20px;display:grid;gap:42px;place-items:center}.intro{max-width:720px;text-align:center}.intro p{margin:0;color:var(--soft);font-size:13px;line-height:1.8}.intro h1{margin:0 0 10px;font-size:clamp(26px,5vw,40px);font-weight:500;letter-spacing:-.07em}.cards{display:grid;gap:28px;grid-template-columns:repeat(2,minmax(280px,450px))}.card{position:relative;width:90mm;height:50mm;min-width:280px;min-height:155px;overflow:hidden;background:var(--paper);box-shadow:0 18px 55px #263e3218}.front{display:flex;padding:8mm 9mm;flex-direction:column;justify-content:space-between}.front:before{position:absolute;inset:0;content:"";border:1px solid var(--line);pointer-events:none}.front .logo{width:205px;height:auto}.tagline{margin:0;color:var(--soft);font-size:8px;letter-spacing:.08em}.contact-row{display:grid;gap:2px;color:var(--ink);font-size:8px;line-height:1.5}.contact-row b{font-size:12px;font-weight:600}.contact-row .phone{color:#6d8794;font-size:12px;letter-spacing:.04em}.contact-row .email{font-size:9px;letter-spacing:.04em}.contact-row .site{font-size:10px;letter-spacing:.06em}.address{color:var(--soft);font-size:7px}.qr-wrap{position:absolute;right:9mm;bottom:8mm;width:25mm;text-align:center;color:var(--green);font-size:6px;letter-spacing:.08em}.qr{display:block;width:21mm;height:21mm;padding:2mm;background:white;border:1px solid var(--green);object-fit:contain;margin:0 auto 3px}.back{padding:8mm;background:var(--green);color:#f7f5ed}.back:after{position:absolute;right:-32px;bottom:-47px;width:170px;height:170px;border:1px solid #c7d99455;border-radius:50%;content:""}.back .symbol{position:absolute;left:9mm;top:7mm;width:28px;height:28px;filter:brightness(0) invert(1);opacity:.95}.back h2{margin:1mm 0 3mm 15mm;font-size:17px;font-weight:500;letter-spacing:-.06em}.back .english{margin:0 0 5mm;color:var(--lime);font-size:7px;letter-spacing:.2em}.services{display:flex;margin-top:14mm;padding:3mm 1mm;justify-content:space-between;gap:5px;border-top:1px solid #dbe4d270;border-bottom:1px solid #dbe4d270;color:#f7f5ed;font-size:9px;line-height:1.3;white-space:nowrap}.slogan{position:absolute;right:0;bottom:11mm;left:0;color:#f7f5ed;font-size:16px;letter-spacing:-.06em;text-align:center}.note{color:var(--soft);font-size:11px;text-align:center}.note b{color:var(--green);font-weight:600}
+    @media(max-width:700px){.cards{grid-template-columns:1fr}.card{width:min(90mm,calc(100vw - 40px));height:auto;aspect-ratio:90/50}.front{padding:9vw}.back{padding:9vw}.services{right:9vw;bottom:9vw}}
+    @media print{html,body{background:white}.stage{padding:0;display:block}.intro,.note{display:none}.cards{display:grid;grid-template-columns:90mm 90mm;gap:6mm;margin:10mm}.card{box-shadow:none;break-inside:avoid}.front:before{display:none}}
+    /* Stable card geometry: one fixed 90:50 canvas, scaled as a whole. */
+    .cards{width:min(100%,960px);grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;align-items:start}
+    .card{width:100%;min-width:0;min-height:0;height:auto;aspect-ratio:90 / 50;box-shadow:0 18px 55px #263e3218}
+    .front{padding:8.2% 8%;display:block}
+    .front .logo{display:block;width:43%;height:auto}
+    .tagline{position:absolute;top:37%;left:8%;margin:0;font-size:clamp(7px,1.1vw,11px);white-space:nowrap}
+    .contact-row{position:absolute;left:8%;bottom:9%;width:54%;display:grid;gap:2px;font-size:clamp(7px,.95vw,10px);line-height:1.45}
+    .contact-row b{font-size:clamp(10px,1.35vw,14px)}.contact-row .phone{font-size:clamp(10px,1.35vw,14px)}.contact-row .site{font-size:clamp(8px,1.05vw,11px)}.address{font-size:clamp(6px,.75vw,8px);white-space:nowrap}
+    .qr-wrap{right:8%;bottom:8%;width:17%;font-size:clamp(5px,.6vw,6px)}.qr{width:76%;height:auto;aspect-ratio:1;padding:7%;margin:0 auto 3px}
+    .back{padding:8%}.back .symbol{left:8%;top:8%;width:10%;height:auto}.back h2{margin:1% 0 0 15%;font-size:clamp(13px,1.8vw,19px)}.back .english{margin:1% 0 0 15%;font-size:clamp(5px,.75vw,8px)}
+    .services{position:absolute;right:8%;bottom:42%;left:8%;margin:0;padding:3% 1%;font-size:clamp(7px,1.15vw,12px);gap:1%;border-top:1px solid #dbe4d270;border-bottom:1px solid #dbe4d270}.slogan{bottom:15%;font-size:clamp(13px,2.2vw,23px)}
+    @media(max-width:700px){.cards{grid-template-columns:1fr;gap:22px}.card{width:100%}.tagline{font-size:clamp(7px,2.4vw,11px)}.contact-row{font-size:clamp(7px,2.1vw,10px)}.contact-row b,.contact-row .phone{font-size:clamp(10px,2.8vw,14px)}.contact-row .email,.contact-row .site{font-size:clamp(8px,2.3vw,11px)}.address{font-size:clamp(6px,1.65vw,8px)}.qr-wrap{font-size:clamp(5px,1.5vw,7px)}.services{font-size:clamp(7px,2.5vw,12px)}.slogan{font-size:clamp(13px,5vw,23px)}}
+    .bank-info{position:absolute;left:8%;bottom:9%;display:grid;gap:2px;color:#f7f5ed;font-size:clamp(7px,.9vw,10px);line-height:1.35}
+    .bank-info b{color:var(--lime);font-size:clamp(8px,1vw,11px);font-weight:600}
+    .bank-info .account{font-size:clamp(9px,1.15vw,13px);letter-spacing:.05em}
+    .slogan{right:8%;bottom:10%;left:auto;width:28%;font-size:clamp(9px,1.2vw,13px);line-height:1.35;text-align:right}
+    .phone-line{display:block;color:#6d8794;font-size:clamp(5.5px,.9vw,10px);letter-spacing:.015em;white-space:nowrap}
+    .phone-line .phone-label{color:var(--soft);font-size:.86em;letter-spacing:0}
+    .phone-line .divider{color:#aab5b2;padding:0 .18em}
+    @page{size:90mm 50mm;margin:0}
+    @media print{html,body{width:90mm;height:50mm;background:white}.stage{display:block;min-height:0;padding:0}.cards{display:block;width:90mm}.card{width:90mm;height:50mm;aspect-ratio:auto;box-shadow:none}.card+.card{break-before:page;page-break-before:always}}
+    /* Consistent contact typography and spacing. */
+    .contact-row{width:65%;gap:5px;line-height:1.5;color:var(--ink)}
+    .contact-row b{font-size:14px;font-weight:600;margin-bottom:3px}
+    .contact-row .phone-line,.contact-row .email,.contact-row .address{font-size:9px;font-weight:400;letter-spacing:0;line-height:1.5;color:#52645a}
+    .phone-line .phone-label{font-size:inherit;color:inherit}
+    .phone-line .divider{padding:0 .45em;color:#9ba79f}
+    @media(max-width:400px){.contact-row .phone-line,.contact-row .email,.contact-row .address{font-size:7px}.contact-row b{font-size:12px}.contact-row{gap:4px}}
+    /* Interior project types followed by individual construction services. */
+    .back{container-type:inline-size}
+    .back:after{bottom:-90px}
+    .services{display:grid;grid-template-columns:1.45fr 1fr;align-items:center;gap:5%;top:35%;bottom:30%;padding:2% 0;font-size:clamp(8px,2.8cqw,11px);line-height:1.5;text-align:left}
+    .services h3{margin:0 0 1.7cqw;color:var(--lime);font-size:clamp(9px,3cqw,12px);font-weight:600}
+    .services ul{list-style:none;margin:0;padding:0;display:grid;align-items:center}
+    .space-types{grid-template-columns:1fr;gap:1cqw}
+    .space-types li::before{content:"–";margin-right:.55em;color:var(--lime)}
+    .services .trade-types{grid-template-columns:1fr;gap:1.8cqw;padding-left:4cqw;border-left:1px solid #dbe4d24b;font-size:clamp(8px,2.5cqw,10px);color:#e1e7dc}
+    .services li{white-space:nowrap}
+    .partial-service{position:absolute;right:8%;top:15%;padding:5px 9px;border:1px solid #dbe4d270;border-radius:2px;color:#f7f5ed;font-size:clamp(8px,2.6cqw,10px);line-height:1.4;white-space:nowrap}
+</style>
+</head>
+<body>
+  <main class="stage">
+    <section class="intro"><h1>조은 디자인 명함 시안</h1><p>홈페이지의 딥그린과 크림색, 얼굴형 J 심볼을 이어서 구성한 앞·뒷면 디자인입니다.</p></section>
+    <section class="cards" aria-label="명함 앞면과 뒷면">
+      <article class="card front" aria-label="명함 앞면">
+        <img class="logo" src="assets/brand/joeun-design-logo.svg" alt="조은 디자인 JOEUN DESIGN STUDIO">
+        <p class="tagline">오랜 노하우와 새로운 감각이 만나는 곳</p>
+        <div class="contact-row"><b>정우빈 팀장</b><span class="phone-line"><span class="phone-label">대표</span> 010-3371-7644 <span class="divider">·</span> <span class="phone-label">업무</span> 010-3200-8272</span><span class="email">woobeen0206@naver.com</span><span class="address">경기 안산시 단원구 새뿔길 28-1 1층 102호 (15399)</span></div>
+        <div class="qr-wrap"><img class="qr" src="https://quickchart.io/qr?text=https%3A%2F%2Fjoeundesign.com&amp;format=png&amp;size=300&amp;margin=2" alt="joeundesign.com 웹사이트 QR 코드"><span>joeundesign.com</span></div>
+      </article>
+      <article class="card back" aria-label="명함 뒷면">
+        <img class="symbol" src="assets/brand/joeun-design-symbol.svg" alt="">
+        <h2>조은 디자인</h2>
+        <p class="english">JOEUN DESIGN STUDIO</p><div class="services" aria-label="시공 항목">
+          <div class="interior-services"><h3>인테리어 시공</h3>
+          <ul class="space-types"><li>아파트 / 주택</li><li>오피스 / 상가 / 식당</li></ul></div>
+          <ul class="trade-types"><li>철거 및 원상복구</li><li>전기</li><li>누수 · 방수</li></ul>
+        </div>
+        <div class="bank-info"><span style="white-space:nowrap"><b>KB 국민은행</b> 정우빈 (조은디자인)</span><span class="account">228001-04-372115</span></div><p class="slogan">좋은 공간엔,<br>이유가 있습니다.</p>
+      </article>
+    </section>
+    <p class="note"><b>인쇄 안내</b> 실제 명함 규격 90 × 50mm · 브라우저에서 인쇄 시 배율 100% 권장</p>
+  </main>
+</body>
+</html>

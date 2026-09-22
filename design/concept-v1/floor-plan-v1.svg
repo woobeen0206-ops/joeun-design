@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120">
+  <defs>
+    <style>
+      text { font-family: "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; fill: #20242a; }
+      .wall { stroke: #252a31; stroke-width: 16; fill: none; stroke-linejoin: round; }
+      .partition { stroke: #8a6a45; stroke-width: 9; fill: none; }
+      .glass { stroke: #42a5c6; stroke-width: 11; fill: none; stroke-dasharray: 18 10; }
+      .door { stroke: #252a31; stroke-width: 4; fill: none; }
+      .dim { stroke: #6a7078; stroke-width: 2; fill: none; marker-start: url(#arrow); marker-end: url(#arrow); }
+      .dimtext { font-size: 22px; fill: #59616b; }
+      .room { font-size: 27px; font-weight: 700; text-anchor: middle; }
+      .sub { font-size: 18px; font-weight: 400; fill: #59616b; text-anchor: middle; }
+      .note { font-size: 19px; fill: #454b53; }
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto-start-reverse">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#6a7078"/>
+    </marker>
+    <pattern id="grid" width="35" height="35" patternUnits="userSpaceOnUse">
+      <path d="M35 0H0V35" fill="none" stroke="#e8e5df" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="1120" fill="#f7f5f0"/>
+  <text x="90" y="70" font-size="34" font-weight="800">청담 엔터테인먼트 오피스 · 2D 공간구성 초안 V1</text>
+  <text x="90" y="103" font-size="19" fill="#656b73">손도면 공사 예정 치수 + 인쇄 평면도 + 현장 영상 비교 / 단위 mm</text>
+
+  <rect x="230" y="150" width="1018" height="850" fill="url(#grid)"/>
+
+  <!-- Concept zones -->
+  <rect x="238" y="158" width="252" height="600" fill="#e7eef3"/>
+  <rect x="498" y="158" width="255" height="255" fill="#efe8dd"/>
+  <rect x="761" y="158" width="350" height="290" fill="#e8e2d8"/>
+  <rect x="1119" y="158" width="121" height="290" fill="#e9dfc9"/>
+  <rect x="498" y="421" width="430" height="337" fill="#f0ede7"/>
+  <rect x="936" y="456" width="304" height="302" fill="#e6eaeb"/>
+  <rect x="238" y="766" width="252" height="226" fill="#e9edf0"/>
+  <rect x="498" y="766" width="254" height="226" fill="#f1e7db"/>
+  <rect x="760" y="766" width="262" height="226" fill="#e8eef0"/>
+  <rect x="1030" y="766" width="210" height="108" fill="#e9dfc9"/>
+  <rect x="1030" y="882" width="210" height="110" fill="#e5e2dc"/>
+
+  <!-- Outer shell -->
+  <path class="wall" d="M230 150H1248V1000H230Z"/>
+
+  <!-- Perimeter glazing observed in video -->
+  <path class="glass" d="M245 150H475 M775 150H1105 M1248 170V430"/>
+
+  <!-- Proposed partitions -->
+  <path class="partition" d="M490 150V1000"/>
+  <path class="partition" d="M490 415H753V150"/>
+  <path class="partition" d="M753 448H1115V150"/>
+  <path class="partition" d="M1115 448H1248"/>
+  <path class="partition" d="M930 448V760H1248"/>
+  <path class="partition" d="M490 760H930"/>
+  <path class="partition" d="M1030 760V1000 M1030 878H1248"/>
+
+  <!-- Entrance opening and glass wall on the left of entry -->
+  <rect x="628" y="988" width="98" height="24" fill="#f7f5f0"/>
+  <path class="door" d="M628 1000V902 A98 98 0 0 1 726 1000"/>
+  <path class="glass" d="M490 775V985 M760 760H1030 M760 760V1000"/>
+  <text x="468" y="884" class="sub" transform="rotate(-90 468 884)">현관 기준 왼쪽 기존 통유리</text>
+
+  <!-- Internal doors, schematic -->
+  <g class="door">
+    <path d="M490 320H420 A70 70 0 0 1 490 250"/>
+    <path d="M600 415V350 A65 65 0 0 1 665 415"/>
+    <path d="M850 448V383 A65 65 0 0 1 915 448"/>
+    <path d="M1115 365H1055 A60 60 0 0 1 1115 305"/>
+    <path d="M930 600H870 A60 60 0 0 1 930 540"/>
+    <path d="M720 760V700 A60 60 0 0 1 780 760"/>
+  </g>
+
+  <!-- Rooms -->
+  <text x="364" y="425" class="room">직원 업무공간</text>
+  <text x="364" y="457" class="sub">오픈 데스크 8~12석</text>
+  <text x="625" y="270" class="room">기획·프로젝트실</text>
+  <text x="625" y="302" class="sub">집중 업무·소규모 협업</text>
+  <text x="933" y="286" class="room">회의·오디션실</text>
+  <text x="933" y="318" class="sub">6~8인 / 방음 보강</text>
+  <text x="1179" y="278" class="room" font-size="23">탕비실</text>
+  <text x="710" y="580" class="room">라운지·협업공간</text>
+  <text x="710" y="612" class="sub">가변 가구 / 촬영 대응</text>
+  <text x="1088" y="585" class="room">미팅룸·부스</text>
+  <text x="1088" y="617" class="sub">화상회의·통화</text>
+  <text x="364" y="872" class="room">갤러리 동선</text>
+  <text x="364" y="904" class="sub">아티스트·콘텐츠 전시</text>
+  <text x="625" y="870" class="room">리셉션·대기</text>
+  <text x="625" y="902" class="sub">현관 / 로고월</text>
+  <text x="895" y="858" class="room">대표실</text>
+  <text x="895" y="890" class="sub">출입구 우측 기존 유리방</text>
+  <text x="1135" y="824" class="room" font-size="22">화장실</text>
+  <text x="1135" y="938" class="room" font-size="22">창고</text>
+  <text x="1135" y="965" class="sub">오른쪽 끝 코너</text>
+  <text x="677" y="1042" font-size="21" font-weight="700" text-anchor="middle">주출입구 1,400</text>
+
+  <!-- Major dimensions read from sketches -->
+  <path class="dim" d="M230 125H1248"/>
+  <text x="739" y="116" class="dimtext" text-anchor="middle">14,540</text>
+  <path class="dim" d="M205 150V755"/>
+  <text x="188" y="452" class="dimtext" transform="rotate(-90 188 452)" text-anchor="middle">8,647</text>
+  <path class="dim" d="M230 1028H490"/>
+  <text x="360" y="1060" class="dimtext" text-anchor="middle">약 3,600</text>
+  <path class="dim" d="M490 135H753"/>
+  <text x="621" y="132" class="dimtext" text-anchor="middle">약 3,640</text>
+  <path class="dim" d="M1115 465H1248"/>
+  <text x="1181" y="492" class="dimtext" text-anchor="middle">약 2,300</text>
+  <path class="dim" d="M753 468H1115"/>
+  <text x="934" y="495" class="dimtext" text-anchor="middle">약 5,000</text>
+
+  <!-- Legend and notes -->
+  <g transform="translate(1300,170)">
+    <text x="0" y="0" font-size="25" font-weight="800">표기 기준</text>
+    <line x1="0" y1="38" x2="75" y2="38" class="wall"/><text x="90" y="45" class="note">외곽·기존 벽</text>
+    <line x1="0" y1="82" x2="75" y2="82" class="partition"/><text x="90" y="89" class="note">공사 예정 벽</text>
+    <line x1="0" y1="126" x2="75" y2="126" class="glass"/><text x="90" y="133" class="note">유리·외부 창호</text>
+    <rect x="0" y="164" width="42" height="26" fill="#e9dfc9"/><text x="90" y="185" class="note">급배수·설비</text>
+
+    <text x="0" y="250" font-size="24" font-weight="800">천장 기준</text>
+    <text x="0" y="286" class="note">기준 높이 2,400</text>
+    <text x="0" y="318" class="note">오픈 천장</text>
+    <text x="0" y="350" class="note">배선 트레이 정리</text>
+    <text x="0" y="382" class="note">노출 레일 조명</text>
+
+    <rect x="-18" y="435" width="270" height="170" rx="14" fill="#fff2d9" stroke="#c8943e" stroke-width="2"/>
+    <text x="0" y="472" font-size="22" font-weight="800" fill="#7c5317">현장 확인 필요</text>
+    <text x="0" y="507" class="note">• 보·기둥의 정확한 좌표</text>
+    <text x="0" y="540" class="note">• 문·창호 개구부 치수</text>
+    <text x="0" y="573" class="note">• 배관 중심선·바닥 단차</text>
+
+    <text x="0" y="680" font-size="18" fill="#8b4c37">※ 공간 구성 검토용 초안</text>
+    <text x="0" y="708" font-size="18" fill="#8b4c37">※ 시공 전 현장 실측 필수</text>
+  </g>
+</svg>
