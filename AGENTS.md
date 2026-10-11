@@ -27,14 +27,16 @@
 | 백엔드 | **Spring Boot + Java (LTS)**, Gradle | 관리자 API, 사진 업로드/처리, 인증. 백엔드 개발자가 검토·도움 주기 쉬움 |
 | DB | **PostgreSQL** + JPA, 마이그레이션은 Flyway | 단일 서버에 충분. 스키마 변경 이력 관리 |
 | 사진 저장 | 서버 로컬 디스크 (저장소 인터페이스로 추상화) | 트래픽 적음 → 단순하게 시작. 나중에 S3 호환 오브젝트 스토리지로 교체 가능하게 설계 |
-| 배포 | 단일 VPS + **Docker Compose** (nginx + Next.js + Spring + PostgreSQL) | 서버 1대로 운영. HTTPS는 Let's Encrypt |
+| 현재 공개 배포 | **S3 + CloudFront** 정적 홈페이지 | 현재 포트폴리오를 단순하고 빠르게 운영 |
+| 관리자 기능 도입 후 | 단일 VPS + **Docker Compose** (nginx + Next.js + Spring + PostgreSQL) | 관리자·DB가 필요해지는 시점에 도입 |
 
 - 버전은 프로젝트 생성(스캐폴딩) 시점의 최신 안정 버전으로 정하고 이 표에 적는다.
 - **왜 순수 React(SPA)가 아니라 Next.js인가**: SPA는 빈 HTML에 JS로 화면을 그려서 검색엔진(특히 네이버)이 내용을 잘 못 읽는다. 공개 페이지는 서버 렌더링/정적 생성이 필요하다.
 
 ## 3. 저장소 구조
 
-현재는 지침·설정·설계 문서만 있다. `frontend/`, `backend/`, `infra/`는 구현 시 생성한다.
+현재 공개 홈페이지 원본은 `frontend/public/cases/`에 있다. 운영용 배포본은 원본에서 실제 사용하는
+파일만 수집해 `.deploy/site/`에 자동 생성한다. `design-preview/`는 과거 시안 보관용이며 배포하지 않는다.
 스킬도 실제 지침이 준비됐을 때만 추가하며 빈 `SKILL.md`는 만들지 않는다.
 
 ```
@@ -45,9 +47,11 @@ joeun-design/
 │   ├── docs/            # 설계 문서 (api.md = API 계약, decisions.md = 결정 기록)
 │   └── config.toml     # 프로젝트 Codex 설정 (모델·권한은 사용자 설정 유지)
 ├── .agents/skills/      # 필요할 때 SKILL.md를 추가하는 Codex 스킬 경로
-├── frontend/            # Next.js
-├── backend/             # Spring Boot
-└── infra/               # docker-compose.yml, nginx 설정, 배포·백업 스크립트
+├── frontend/            # Next.js와 현재 정적 홈페이지 원본
+├── infra/               # AWS 배포 설정과 검사·배포 스크립트
+├── design-preview/      # 과거 시안 보관용, 운영 배포 제외
+├── .deploy/site/        # 자동 생성되는 유일한 S3 업로드 경계
+└── backend/             # Spring Boot, 관리자 기능 구현 시 사용
 ```
 
 ## 4. 기능 범위
@@ -96,6 +100,11 @@ joeun-design/
 
 ## 7. 개발 흐름
 
+- 현재 공개 홈페이지의 유일한 원본은 `frontend/public/cases/`다.
+- S3에는 프로젝트 전체나 원본 폴더를 직접 올리지 않고, `infra/scripts/build-static-site.mjs`가 만든 `.deploy/site/`만 올린다.
+- 프로젝트 루트의 `올려.command`는 검사 → 배포본 생성 → 빌드·린트 → S3 업로드 → CloudFront 캐시 갱신 → 공개 파일 확인을 실행한다.
+- 실제 운영 배포는 오너가 "올려"라고 명시한 뒤에만 실행한다. 미리보기(`--dry-run`)는 운영 환경을 바꾸지 않는다.
+- 자동 배포에서는 기존 S3 파일을 삭제하지 않는다. 옛 파일 정리는 별도 검토와 오너 확인 후 진행한다.
 - 프론트/백엔드 사이의 약속(API 경로, 요청/응답 형식)은 `.codex/docs/api.md`가 기준이다. API를 바꾸면 이 문서를 먼저 고친다.
 - 큰 기술 결정을 내리면 `.codex/docs/decisions.md`에 "무엇을, 왜"를 짧게 남긴다.
 - 프론트 작업은 `frontend-dev`, 백엔드 작업은 `backend-dev` 서브에이전트에 맡길 수 있다. 양쪽에 걸친 기능은 API 계약 → 백엔드 → 프론트 순으로 진행한다.
@@ -104,12 +113,17 @@ joeun-design/
 - 기존 사용자 변경을 보존하고, 요청에 필요한 범위만 수정한다.
 - 완료 기준: 구현 변경은 관련 빌드·테스트 통과 + 화면 변경은 실제 브라우저 확인. 문서·설정만 바꾸면 형식과 참조 경로를 검증한다. 실행 환경 때문에 못 한 검증은 명시한다.
 
-### 명령어 (스캐폴딩 후 확정)
+### 명령어
 ```bash
 # frontend
 cd frontend && npm run dev      # 개발 서버
 cd frontend && npm run build    # 빌드 확인
 cd frontend && npm run lint
+cd frontend && npm run site:check       # 정적 홈페이지 파일 검사
+cd frontend && npm run deploy:dry-run   # AWS 변경 예정 목록만 확인
+
+# 운영 배포 (오너의 명시적 승인 후)
+./올려.command
 
 # backend
 cd backend && ./gradlew bootRun
@@ -121,7 +135,8 @@ docker compose -f infra/docker-compose.yml up -d
 
 ## 8. 미정 사항 (오너 확인 필요)
 
-- [ ] 도메인 주소, 서버 업체(국내 클라우드 vs 해외 VPS)
+- [x] 도메인과 현재 공개 배포: 조은디자인인테리어.com, S3 + CloudFront
+- [ ] 관리자 기능용 서버 업체(관리자·DB 구현 시 결정)
 - [ ] 회사 정보: 상호, 대표 전화, 주소, 사업자번호, 카카오톡 채널
 - [ ] 디자인 톤 / 참고하고 싶은 사이트
 - [ ] 로고, 대표 이미지
@@ -131,6 +146,7 @@ docker compose -f infra/docker-compose.yml up -d
 
 - 프로젝트 공통 지침은 이 `AGENTS.md` 한 곳에서 관리한다.
 - 프로젝트 설정은 `.codex/config.toml`, FE/BE 역할은 `.codex/agents/*.toml`에 둔다.
+- 홈페이지 배포·배포 미리보기·배포 가능 여부 확인에는 `.agents/skills/deploy-joeun-site/SKILL.md`를 사용한다.
 - 모델·추론 수준·권한은 사용자/앱 설정을 따른다. 프로젝트 파일로 임의 고정하거나 권한을 확대하지 않는다.
 - 예: "frontend-dev로 시공 사례 목록 화면 만들어줘", "backend-dev로 사진 업로드 API 구현해줘".
 - 공식 문서: https://learn.chatgpt.com/docs/agent-configuration/subagents 및 https://learn.chatgpt.com/docs/build-skills

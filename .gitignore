@@ -1,0 +1,13 @@
+.DS_Store
+.deploy/
+output/
+tmp/
+design-preview/
+Claude outputs/
+.pnpm-store/
+.aws/
+.env
+.env.*
+*.pem
+*.key
+CLAUDE.md
