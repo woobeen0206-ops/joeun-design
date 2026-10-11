@@ -1,0 +1,4 @@
+interface:
+  display_name: "좋은디자인 프로젝트 가이드"
+  short_description: "새 대화에서도 프로젝트 구조를 파악하고 안전하게 작업"
+  default_prompt: "Use $joeun-design-project-guide to understand this project and complete my requested website work."

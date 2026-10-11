@@ -146,6 +146,7 @@ docker compose -f infra/docker-compose.yml up -d
 
 - 프로젝트 공통 지침은 이 `AGENTS.md` 한 곳에서 관리한다.
 - 프로젝트 설정은 `.codex/config.toml`, FE/BE 역할은 `.codex/agents/*.toml`에 둔다.
+- 새 대화에서 좋은디자인 프로젝트 작업을 시작할 때는 `.agents/skills/joeun-design-project-guide/SKILL.md`를 진입점으로 사용한다.
 - 홈페이지 배포·배포 미리보기·배포 가능 여부 확인에는 `.agents/skills/deploy-joeun-site/SKILL.md`를 사용한다.
 - 모델·추론 수준·권한은 사용자/앱 설정을 따른다. 프로젝트 파일로 임의 고정하거나 권한을 확대하지 않는다.
 - 예: "frontend-dev로 시공 사례 목록 화면 만들어줘", "backend-dev로 사진 업로드 API 구현해줘".
