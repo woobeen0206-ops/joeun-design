@@ -173,22 +173,20 @@ img{display:block;width:100%;object-fit:cover}:focus-visible{outline:3px solid #
 @media(max-width:640px){.music-toggle{bottom:calc(79px + env(safe-area-inset-bottom));width:44px;min-width:44px;padding:0;justify-content:center;border-radius:50%;font-size:15px}.music-label{display:none}}
 .face-profile{fill:none;stroke:var(--ink);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
 </style>
+<link rel="stylesheet" href="redesign.css" />
 </head>
 <body>
-<audio id="backgroundMusic" src="projects-assets/music/bach-gavotte-clean.mp3" loop preload="none"></audio>
-<button id="musicToggle" class="music-toggle" type="button" aria-pressed="false" aria-label="배경음악 켜기"><span class="music-icon" aria-hidden="true">♫</span><span class="music-label">음악과 함께 둘러보기</span></button>
 <a class="skip-link" href="#main">본문으로 바로가기</a>
 
 <header class="site-header">
   <a class="brand" href="#main" aria-label="조은 디자인 홈">
-    <span class="face-logo" aria-hidden="true"><svg viewBox="0 0 100 100" role="img"><path class="face-corner" d="M12 32V12h20M88 68v20H68"/><path class="face-profile" d="M52 29V58C52 66 48 71 42 69"/><circle class="face-dot" cx="72" cy="24" r="7"/></svg></span>
-    <span><strong>조은 디자인</strong><small>JOEUN DESIGN STUDIO</small></span>
+    <img class="brand-logo" src="assets/brand/joeun-design-logo.svg" alt="조은 디자인" />
   </a>
   <nav class="desktop-nav" aria-label="주요 메뉴">
     <a href="#projects">시공 사례</a><a href="#onsite">시공 과정</a><a href="#studio">스튜디오</a><a href="#process">진행 안내</a>
     <a class="nav-cta" href="joeun-design-estimate.html">무료 견적 준비 ↗</a>
   </nav>
-  <button class="menu-button" type="button" id="menuBtn" aria-expanded="false" aria-controls="mobile-nav">메뉴 ☰</button>
+  <button class="menu-button" type="button" id="menuBtn" aria-expanded="false" aria-controls="mobile-nav">메뉴</button>
   <nav id="mobile-nav" class="mobile-nav" aria-label="모바일 메뉴" hidden>
     <a href="#projects">시공 사례</a><a href="#onsite">시공 과정</a><a href="#studio">스튜디오</a><a href="#process">진행 안내</a>
     <a href="joeun-design-estimate.html">무료 견적 준비</a>
@@ -201,6 +199,17 @@ img{display:block;width:100%;object-fit:cover}:focus-visible{outline:3px solid #
     <div class="hero-shade"></div>
     <div class="page-wrap hero-content">
       <p class="eyebrow">JOEUN DESIGN STUDIO</p>
+      <div class="hero-partnership" aria-label="한샘 등록 시공 업체 및 오늘의집 등록 업체">
+        <span class="hero-partnership-item">
+          <img class="hero-trust-logo" src="assets/brand/hanssem-ci-transparent.png" alt="한샘 공식 CI" />
+          <strong>등록 시공 업체</strong>
+        </span>
+        <span class="hero-partnership-divider" aria-hidden="true"></span>
+        <span class="hero-partnership-item">
+          <img class="hero-ohouse-logo" src="assets/brand/ohouse-logo-light.png" alt="오늘의집 공식 로고" />
+          <strong>등록 업체</strong>
+        </span>
+      </div>
       <h1>생활의 결을 읽고,<br />공간의 답을 만듭니다.</h1>
       <p>매일 머무는 집이 오래 편안하도록.<br />보이는 마감부터 보이지 않는 기본까지 함께 살핍니다.</p>
       <a class="line-link light" href="#projects">시공 사례 둘러보기 <span>↘</span></a>
@@ -228,16 +237,18 @@ img{display:block;width:100%;object-fit:cover}:focus-visible{outline:3px solid #
         <p class="eyebrow">Selected projects</p>
         <h2>실제로 완성한 공간을<br />먼저 보여드립니다.</h2>
       </div>
-      <p>같은 아파트에서도 가족의 생활 방식과 취향에 따라 공간의 답은 달라집니다. 현장에서 직접 촬영한 사진입니다.</p>
+      <p>조은 디자인이 직접 시공하고 촬영한 공간입니다.</p>
     </div>
 
     <div class="case-tabs" id="caseTabs" role="tablist" aria-label="시공 사례 선택"></div>
 
-    <div id="caseHeading" class="project-heading"></div>
-    <div id="caseBrief"></div>
-    <div id="caseGallery" class="gallery-grid"></div>
-    <div id="caseFooter" class="project-footer"></div>
-    <div id="caseCompare"></div>
+    <div class="selected-project" id="selectedProject">
+      <div id="caseHeading" class="project-heading"></div>
+      <div id="spaceFilters" class="space-filters" aria-label="공간별 사진 보기"></div>
+      <div id="caseGallery" class="gallery-grid"></div>
+      <p id="galleryStatus" class="visually-hidden" aria-live="polite"></p>
+      <div id="caseCompare"></div>
+    </div>
   </section>
 
   <section class="onsite-section" id="onsite">
@@ -247,7 +258,6 @@ img{display:block;width:100%;object-fit:cover}:focus-visible{outline:3px solid #
           <p class="eyebrow">Behind the finish</p>
           <h2>마감 뒤에 남는 것은<br />기본을 지킨 공정입니다.</h2>
         </div>
-        <p>방수와 배관, 목공과 타일. 완성된 사진에는 보이지 않는 과정을 현장에서 기록해 공유합니다.</p>
       </div>
       <div class="onsite-grid" id="onsiteGrid"></div>
     </div>
@@ -258,12 +268,11 @@ img{display:block;width:100%;object-fit:cover}:focus-visible{outline:3px solid #
       <div>
         <p class="eyebrow">Our approach</p>
         <h2>보기 좋은 공간을 넘어,<br />살기 좋은 공간을 생각합니다.</h2>
-        <p class="studio-intro"><strong>사업자는 새로 시작했지만, 현장 경험까지 새로 시작한 것은 아닙니다.</strong>약 20년 동안 인테리어 현장에서 쌓은 경험을 바탕으로 조은 디자인이라는 새 이름을 시작했습니다. 어떤 분위기를 좋아하는지, 어디가 불편했는지 듣고 실제 생활에 맞는 공사 범위를 함께 정합니다.</p>
       </div>
       <div class="service-list">
-        <article class="service-item"><span>01</span><div><h3>인테리어 디자인</h3><p>생활 동선과 취향을 함께 고려하는 설계. 주거·상업 공간의 기획부터 마감까지.</p></div></article>
-        <article class="service-item"><span>02</span><div><h3>설비 · 방수 · 누수</h3><p>보이는 마감만큼 중요한 공간의 기본. 배관과 방수, 누수 문제까지 함께 살핍니다.</p></div></article>
-        <article class="service-item"><span>03</span><div><h3>철거 · 부분 시공</h3><p>집 전체부터 필요한 공간 한 곳까지. 현장 상태와 공사 범위에 맞춰 계획합니다.</p></div></article>
+        <article class="service-item"><span>01</span><h3>인테리어 디자인</h3></article>
+        <article class="service-item"><span>02</span><h3>설비 · 방수 · 누수</h3></article>
+        <article class="service-item"><span>03</span><h3>철거 · 부분 시공</h3></article>
       </div>
     </div>
   </section>
@@ -271,13 +280,12 @@ img{display:block;width:100%;object-fit:cover}:focus-visible{outline:3px solid #
   <section class="page-wrap process-section" id="process">
     <div class="section-heading">
       <div><p class="eyebrow">From first hello to home</p><h2>시작부터 마무리까지.</h2></div>
-      <p>처음 하는 인테리어도 막막하지 않도록, 한 단계씩 함께 정해갑니다.</p>
     </div>
     <div class="process-grid">
-      <article class="process-step"><span>01</span><h3>상담과 현장 확인</h3><p>원하는 분위기와 예산, 일정을 듣고 공간의 상태를 확인합니다.</p></article>
-      <article class="process-step"><span>02</span><h3>디자인과 견적</h3><p>도면과 자재, 공사 범위를 정하고 견적과 일정을 함께 확인합니다.</p></article>
-      <article class="process-step"><span>03</span><h3>철거와 시공</h3><p>확정된 계획에 따라 공사를 진행하고 현장의 진행 상황을 공유합니다.</p></article>
-      <article class="process-step"><span>04</span><h3>완료 점검과 사후관리</h3><p>마감 상태를 함께 살펴보고 사용 중 필요한 부분을 확인합니다.</p></article>
+      <article class="process-step"><span>01</span><h3>상담과 현장 확인</h3></article>
+      <article class="process-step"><span>02</span><h3>디자인과 견적</h3></article>
+      <article class="process-step"><span>03</span><h3>철거와 시공</h3></article>
+      <article class="process-step"><span>04</span><h3>완료 점검과 사후관리</h3></article>
     </div>
   </section>
 
@@ -291,7 +299,7 @@ img{display:block;width:100%;object-fit:cover}:focus-visible{outline:3px solid #
       <div>
         <a class="phone" href="tel:01032008272">010 3200 8272 <span>↗</span></a>
         <div class="contact-info">
-          <div><small>상담 시간</small>08:00 – 19:00</div>
+          <div><small>상담 시간</small>08:00 - 19:00</div>
           <div><small>이메일</small><a href="mailto:woobeen0206@gmail.com">woobeen0206@gmail.com</a></div>
         </div>
         <div class="contact-actions">
@@ -365,92 +373,38 @@ const CASES = [
   {
     id: "case01", tab: "사례 01", no: "01",
     name: "아파트 전체 리모델링", meta: "주거공간 · 전체 공정",
-    note: "따뜻한 베이지 톤 벽과 밝은 타일 바닥으로 정돈한 집.<br />주방과 다이닝을 한 흐름으로 이어 가족이 모이는 자리를 넓혔습니다.",
-    points: ["주방과 다이닝을 한 흐름으로 연결", "거실·침실·서재까지 밝은 바닥 톤을 통일", "같은 욕실을 두 방향에서 기록해 실제 구성을 확인"],
-    highlights: {
-      "title": "주방과 식탁, 두 시선으로 담은 욕실",
-      "intro": "아일랜드 옆 식탁과 같은 욕실을 서로 다른 방향에서 촬영한 사진을 함께 살펴봅니다. 밝은 바닥에 베이지 계열의 벽과 가구를 조합한 마감도 담았습니다.",
-      "spaces": [
-            {
-                  "photo": 3,
-                  "title": "주방 · 아일랜드 옆에 놓인 식탁",
-                  "text": "조리대 바로 옆으로 타원형 식탁이 이어집니다. 주방 수납장과 아일랜드는 밝은 색으로 맞추고, 식탁 위에는 길게 뻗은 장식 조명을 배치한 모습입니다."
-            },
-            {
-                  "photo": 5,
-                  "title": "욕실 · 같은 공간을 두 방향에서",
-                  "text": "골드 프레임 거울과 벽걸이 세면대가 있는 같은 욕실을 출입구 쪽과 안쪽에서 각각 촬영했습니다. 회색 타일, 거울 수납장과 샤워 공간의 연결을 두 사진에서 함께 확인할 수 있습니다."
-            }
-      ]
-},
     photos: [
       ["case01-01-kitchen.jpg", "하나로 이어지는 주방과 다이닝", "주방"],
       ["case01-02-living.jpg", "창을 따라 넓게 열린 거실", "거실"],
       ["case01-03-entry.jpg", "거울과 중문으로 정돈한 현관", "현관"],
       ["case01-06-dining.jpg", "아일랜드에 붙인 다이닝 테이블", "다이닝"],
-      ["case01-04-bedroom.jpg", "조명이 중심을 잡는 침실", "침실"],
       ["case01-05-bath.jpg", "골드 프레임 거울의 욕실", "욕실"],
-      ["case01-09-bath2.jpg", "같은 욕실을 안쪽에서 본 모습", "욕실"],
-      ["case01-08-room.jpg", "책상과 선반을 둔 작은 방", "서재"],
       ["case01-10-living2.jpg", "발코니로 이어지는 거실 창", "거실"]
     ]
   },
   {
     id: "case02", tab: "사례 02", no: "02",
     name: "아파트 전체 리모델링", meta: "주거공간 · 전체 공정",
-    note: "거실과 욕실의 전후 변화부터<br />주방·복도·수납 공간의 마감까지 살펴보세요.",
-    points: ["거실과 욕실의 시공 전후를 함께 공개", "거실에서 주방·복도까지 밝은 마감을 연결", "완공 사진과 이전 상태를 같은 사례 안에서 확인"],
-    story: {
-      title: "공사 중의 모습부터, 완성된 공간까지",
-      intro: "거실과 욕실의 이전 모습, 그리고 마감 후의 모습을 함께 담았습니다. 바닥과 벽의 색감, 조명과 설비가 공간의 인상을 어떻게 바꾸는지 살펴보세요.",
-      spaces: [
-        {title: "거실 · 밝은 바닥과 정돈된 천장", text: "공사 중 사진에서는 바닥면과 천장의 작업 흔적이 드러납니다. 완성 사진에서는 밝은 색의 바닥 마감과 매입 조명, 창가까지 이어지는 거실의 모습을 확인할 수 있습니다."},
-        {title: "욕실 · 욕조를 덜어내고 동선을 다시 구성", text: "욕조와 세면대가 한 화면에 있던 기존 욕실을 철거하고, 입구의 세면 공간에서 안쪽 샤워 공간으로 이어지도록 길게 정리했습니다."}
-      ]
-    },
     photos: [
       ["case02-01-living.jpg", "거실과 주방의 연결", "주방"],
       ["case02-02-living2.jpg", "채광을 살린 거실 창", "거실"],
       ["case02-03-kitchen.jpg", "차분한 색감의 주방", "주방"],
       ["case02-04-bath.jpg", "두 개의 세면대를 둔 욕실", "욕실"],
       ["case02-05-hall.jpg", "방과 방을 잇는 복도", "복도"],
-      ["case02-06-window.jpg", "창가에 만든 여유 공간", "창가"],
-      ["case02-07-powder.jpg", "생활을 정돈하는 파우더룸", "파우더룸"],
-      ["case02-08-slat.jpg", "공간의 인상을 만드는 디테일", "디테일"],
       ["case02-09-bath2.jpg", "욕조를 따로 둔 욕실", "욕실"]
     ],
     compares: [
       { before: ["case02-before-living.jpg", "BEFORE · 철거 직후 거실"], after: ["case02-02-living2.jpg", "AFTER · 거실 마감 후"] },
       { before: ["case02-before-bath.jpg", "BEFORE · 철거 전 욕실"], after: ["case02-04-bath.jpg", "AFTER · 세면·샤워 공간 마감 후"] }
-    ],
-    compareNote: "같은 현장의 같은 공간이며, 촬영 위치와 각도는 다릅니다."
+    ]
   },
   {
     id: "case03", tab: "사례 03", no: "03",
     name: "아파트 전체 리모델링", meta: "주거공간 · 전체 공정",
-    note: "구조를 정리하고 흰 톤으로 맞춘 집.<br />유리 중문과 간접 조명으로 넓이를 살렸습니다.",
-    points: ["유리 중문으로 시야를 열어 공간을 분리", "거실·복도·방을 밝은 톤으로 통일", "간접 조명과 맞춤 책상·선반으로 사용성을 보완"],
-    highlights: {
-      "title": "유리로 나누고, 밝은 마감으로 잇다",
-      "intro": "거실의 유리 중문과 방 안의 책상·선반을 살펴봅니다. 공간의 경계를 만드는 방식과 작은 방의 가구 구성이 드러나는 사례입니다.",
-      "spaces": [
-            {
-                  "photo": 1,
-                  "title": "거실 · 시선이 통하는 유리 중문",
-                  "text": "격자 프레임의 유리 중문 너머로 안쪽 공간이 보입니다. 거실은 밝은 벽과 바닥, 천장의 매입 조명과 실링팬으로 구성되어 있습니다."
-            },
-            {
-                  "photo": 3,
-                  "title": "방 · 창 옆에 모은 책상과 선반",
-                  "text": "창 옆 벽면에 책상과 세로 선반을 모아 배치했습니다. 밝은 벽과 대비되는 나무색 가구가 방 안의 작업 공간을 구분해 줍니다."
-            }
-      ]
-},
     photos: [
       ["case03-01-living.jpg", "긴 조명으로 중심을 잡은 거실", "거실"],
       ["case03-06-living2.jpg", "유리 파티션으로 나눈 공간", "거실"],
       ["case03-03-bath.jpg", "간접 조명을 넣은 욕실", "욕실"],
-      ["case03-04-room.jpg", "책상과 선반을 짜 넣은 방", "방"],
       ["case03-05-door.jpg", "격자 유리 중문", "중문"],
       ["case03-07-hall.jpg", "현관에서 이어지는 복도", "복도"]
     ]
@@ -458,29 +412,10 @@ const CASES = [
   {
     id: "case04", tab: "사례 04", no: "04",
     name: "아파트 전체 리모델링", meta: "주거공간 · 전체 공정",
-    note: "전면 창으로 들어오는 빛을 기준으로 잡은 집.<br />주방과 거실을 한 시야에 담았습니다.",
-    points: ["일자형 주방에서 거실과 전면 창까지 열린 시야", "회색 타일 욕실의 선반과 수전 배치를 정돈", "유리문 수납과 발코니 중문으로 공간을 구분"],
-    highlights: {
-      "title": "일자형 주방 너머로 이어지는 거실",
-      "intro": "벽을 따라 놓인 주방과 창가의 거실, 회색 타일로 마감한 욕실을 담았습니다. 공간마다 이어지는 색감과 설비의 배치를 살펴보세요.",
-      "spaces": [
-            {
-                  "photo": 0,
-                  "title": "주방 · 한쪽 벽을 따라 이어지는 조리대",
-                  "text": "상부장과 하부장, 싱크대가 한쪽 벽을 따라 배열되어 있습니다. 주방 앞 통로 너머로 거실과 창이 보이며, 밝은 바닥이 두 공간을 이어 줍니다."
-            },
-            {
-                  "photo": 2,
-                  "title": "욕실 · 회색 타일과 가로로 긴 선반",
-                  "text": "벽과 바닥에 회색 계열의 타일을 사용했습니다. 세면대 뒤로 가로 선반이 이어지고, 옆에는 샤워 수전과 코너 선반이 배치되어 있습니다."
-            }
-      ]
-},
     photos: [
       ["case04-01-kitchen.jpg", "거실까지 트인 일자형 주방", "주방"],
       ["case04-02-living.jpg", "전면 창을 살린 거실", "거실"],
       ["case04-03-bath.jpg", "콘크리트 질감 타일의 욕실", "욕실"],
-      ["case04-04-bath2.jpg", "거울과 선반을 둔 세면 공간", "욕실"],
       ["case04-05-closet.jpg", "유리문으로 나눈 공간", "수납"],
       ["case04-06-door.jpg", "발코니로 이어지는 중문", "중문"]
     ]
@@ -488,28 +423,8 @@ const CASES = [
   {
     id: "case05", tab: "사례 05", no: "05",
     name: "목공 · 마감 시공", meta: "주거공간 · 부분 공정",
-    note: "벽면 전체를 붙박이로 정리한 현장.<br />면과 선을 맞추는 목공 마감에 공을 들였습니다.",
-    points: ["벽면 전체를 붙박이 수납으로 정리", "창가까지 이어지는 간접 조명으로 깊이감을 구성", "필요한 범위의 목공과 마감에 집중한 부분 시공"],
-    highlights: {
-      "title": "벽면 수납과 조명이 만드는 정돈감",
-      "intro": "벽을 채운 수납장과 천장 가장자리의 조명을 중심으로 마감 디테일을 담았습니다. 문과 벽, 수납장이 만나는 부분을 살펴보세요.",
-      "spaces": [
-            {
-                  "photo": 3,
-                  "title": "수납 · 벽면을 채운 붙박이장",
-                  "text": "키가 큰 수납장 문이 벽면을 따라 나란히 이어집니다. 벽과 비슷한 밝은 색의 문, 세로 손잡이, 위쪽 마감이 한 화면에 담겨 있습니다."
-            },
-            {
-                  "photo": 2,
-                  "title": "거실 · 창가까지 이어지는 조명",
-                  "text": "천장 가장자리에 따뜻한 색의 간접 조명이 이어지고, 안쪽에는 작은 매입 조명이 배치되어 있습니다. 창가를 향해 촬영한 사진에서 천장과 벽면의 마감을 함께 볼 수 있습니다."
-            }
-      ]
-},
     photos: [
       ["case05-01-living.jpg", "거실에서 주방으로 이어지는 시야", "거실"],
-      ["case05-03-living2.jpg", "주방까지 한 흐름으로 트인 구성", "거실"],
-      ["case05-02-balcony.jpg", "발코니 창으로 들어오는 빛", "발코니"],
       ["case05-06-builtin.jpg", "벽면을 채운 붙박이 수납", "수납"],
       ["case05-05-door.jpg", "격자 유리로 나눈 공간", "중문"],
       ["case05-04-bath.jpg", "간접 조명을 넣은 세면대", "욕실"]
@@ -518,24 +433,6 @@ const CASES = [
   {
     id: "case06", tab: "사례 06", no: "06",
     name: "아파트 전체 리모델링", meta: "주거공간 · 전체 공정",
-    note: "확장한 거실 창으로 시야를 열고,<br />군더더기 없는 흰 톤으로 마감한 집.",
-    points: ["확장한 거실과 전면 창으로 시야를 확보", "일자형 주방과 무늬 수납장으로 대비를 구성", "붙박이 수납·욕실·현관까지 밝은 톤으로 정리"],
-    highlights: {
-      "title": "밝은 거실과 무늬가 있는 주방",
-      "intro": "거실의 넓은 창과 천장 조명, 주방 수납장의 무늬가 각각 다른 인상을 만듭니다. 완성 사진을 통해 두 공간의 마감을 살펴봅니다.",
-      "spaces": [
-            {
-                  "photo": 1,
-                  "title": "거실 · 창을 향해 열린 시야",
-                  "text": "큰 창을 향해 바닥과 벽면이 이어집니다. 천장에는 실링팬과 매입 조명을 배치하고, 벽과 천장은 밝은 색으로 맞춘 모습입니다."
-            },
-            {
-                  "photo": 2,
-                  "title": "주방 · 무늬로 표현한 수납장",
-                  "text": "밝은 바탕에 짙은 선이 있는 수납장 문과 어두운 벽면을 조합했습니다. 일렬로 놓인 싱크대와 조리대 옆으로 유리문이 보입니다."
-            }
-      ]
-},
     photos: [
       ["case06-01-living.jpg", "확장해 넓힌 거실 창", "거실"],
       ["case06-02-living2.jpg", "천장까지 정리한 거실", "거실"],
@@ -546,61 +443,22 @@ const CASES = [
     ]
   },
   {
-    id: "case07", tab: "사례 07", no: "07",
-    name: "발코니 부분 확장", meta: "주거공간 · 부분 시공",
-    note: "방 하나만 필요한 만큼.<br />발코니를 확장해 방의 폭을 넓힌 부분 시공입니다.",
-    points: ["발코니 철거 전의 문틀과 바닥 경계를 공개", "창가까지 바닥 마감을 이어 방의 폭을 확장", "같은 방의 시공 전후를 가까운 시선으로 비교"],
-    photos: [
-      ["case07-after-01.jpg", "확장 후 넓어진 방", "방"],
-      ["case07-after-02.jpg", "창까지 이어지는 바닥 마감", "방"],
-      ["case07-before-01.jpg", "확장 전 발코니", "시공 전"],
-      ["case07-before-02.jpg", "철거 전 방과 발코니 경계", "시공 전"]
-    ],
-    story: {
-      title: "발코니 경계에서 창가까지, 하나의 방으로",
-      intro: "시공 전에는 방과 발코니 사이의 문틀과 바닥 경계가 분명했습니다. 확장 후에는 경계를 없애고 창가까지 같은 바닥 마감으로 이어 방의 폭을 넓혔습니다.",
-      spaces: [
-        {title: "방 · 문틀과 바닥 경계를 없앤 확장", text: "출입구에서 창을 바라보는 비슷한 시선으로 비교했습니다. 기존 발코니의 문틀과 단차가 사라지고 하나의 방으로 이어지는 변화가 선명합니다."}
-      ]
-    },
-    compares: [
-      { before: ["case07-before-02.jpg", "BEFORE · 철거 전 경계"], after: ["case07-after-02.jpg", "AFTER · 바닥 마감 후"] }
-    ],
-    compareNote: "같은 현장의 같은 방이며, 촬영 위치와 각도는 다릅니다."
-  },
-  {
     id: "case08", tab: "사례 08", no: "08",
     name: "아파트 전체 리모델링", meta: "주거공간 · 전체 공정",
-    note: "회색 바닥과 밝은 수납 면으로 정돈한 집.<br />주방·거실·복도·현관이 한 흐름으로 이어지도록 구성했습니다.",
-    points: ["긴 일자형 주방과 거실을 한 시야로 연결", "아치형 복도와 수납 벽면으로 동선을 정리", "욕실과 현관까지 13장의 완공 사진으로 마감 기록"],
-    highlights: {
-      title: "긴 주방과 수납 벽면이 만드는 하나의 흐름",
-      intro: "주방에서 거실까지 이어지는 동선과 벽면 수납, 아치형 복도와 현관의 간접 조명을 담았습니다. 공간별 마감이 연결되는 모습을 살펴보세요.",
-      spaces: [
-        {photo: 0, title: "주방·거실 · 길게 이어지는 공용 공간", text: "일자형 주방을 따라 거실과 전면 창까지 시야가 이어집니다. 밝은 수납장과 회색 바닥, 천장 조명을 같은 흐름으로 정리했습니다."},
-        {photo: 3, title: "거실 · 설비와 수납을 한 면에 정리", text: "벽면 수납과 조작부를 같은 면 안에 배치했습니다. 돌출되는 요소를 줄여 넓은 거실의 인상이 유지됩니다."},
-        {photo: 11, title: "현관 · 수납 아래로 이어지는 간접 조명", text: "현관 수납장 아래에 간접 조명을 두고 벤치와 중문을 연결했습니다. 집에 들어서는 첫 장면을 밝고 정돈된 분위기로 구성했습니다."}
-      ]
-    },
     photos: [
       ["case08-reference/01-living-kitchen-wide.webp", "주방과 거실이 이어지는 전체 전경", "거실·주방"],
       ["case08-reference/02-kitchen-flow.webp", "주방에서 거실까지 이어지는 동선", "주방"],
       ["case08-reference/03-living-wide.webp", "전면 창과 수납 벽면을 담은 거실", "거실"],
       ["case08-reference/04-storage-wall.webp", "수납과 설비를 정돈한 거실 벽면", "수납"],
       ["case08-reference/05-arched-hall.webp", "아치형 개구부가 이어지는 복도", "복도"],
-      ["case08-reference/06-bedroom-balcony.webp", "창과 발코니가 열린 침실", "침실"],
-      ["case08-reference/07-bedroom-window.webp", "밝은 마감과 넓은 창의 방", "침실"],
       ["case08-reference/08-bathroom-overview.webp", "세면대와 수납을 한눈에 보는 욕실", "욕실"],
-      ["case08-reference/09-bath-tub-vanity.webp", "욕조와 세면대를 정돈한 욕실", "욕실"],
-      ["case08-reference/10-bath-storage.webp", "거울 수납과 진회색 타일의 욕실", "욕실"],
       ["case08-reference/11-entry-overview.webp", "간접 조명과 수납을 구성한 현관", "현관"],
-      ["case08-reference/12-entry-bench.webp", "현관 벤치와 하부 간접 조명", "현관"],
       ["case08-reference/13-entry-hall.webp", "중문에서 실내로 이어지는 시야", "중문·복도"]
     ]
   }
 ];
 
-const CASE_DISPLAY_ORDER = ["case01", "case08", "case07", "case02", "case03", "case04", "case05", "case06"];
+const CASE_DISPLAY_ORDER = ["case01", "case08", "case02", "case03", "case04", "case05", "case06"];
 CASES.sort((a, b) => CASE_DISPLAY_ORDER.indexOf(a.id) - CASE_DISPLAY_ORDER.indexOf(b.id));
 CASES.forEach((item, index) => {
   const displayNo = String(index + 1).padStart(2, "0");
@@ -620,10 +478,9 @@ const ONSITE = [
 ];
 
 const HERO = [
-  ["case01-hero.jpg", "사례 01 · 주방", "아파트 주방과 다이닝"],
-  ["case08-reference/01-living-kitchen-wide.webp", "사례 02 · 거실·주방", "주방과 거실이 이어지는 아파트"],
-  ["case07-after-02.jpg", "사례 03 · 발코니 확장", "발코니를 확장해 넓어진 방"],
-  ["case02-02-living2.jpg", "사례 04 · 거실", "리모델링을 마친 아파트 거실"]
+  ["case01-hero.jpg", "주방과 다이닝", "아파트 주방과 다이닝"],
+  ["case08-reference/01-living-kitchen-wide.webp", "거실과 주방", "주방과 거실이 이어지는 아파트"],
+  ["case02-02-living2.jpg", "완성된 거실", "리모델링을 마친 아파트 거실"]
 ];
 
 /* ---------- hero ---------- */
@@ -649,51 +506,59 @@ menuBtn.onclick = () => {
   const open = mobileNav.hidden;
   mobileNav.hidden = !open;
   menuBtn.setAttribute("aria-expanded", String(open));
-  menuBtn.textContent = open ? "닫기 ×" : "메뉴 ☰";
+  menuBtn.textContent = open ? "닫기" : "메뉴";
 };
 mobileNav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
-  mobileNav.hidden = true; menuBtn.setAttribute("aria-expanded", "false"); menuBtn.textContent = "메뉴 ☰";
+  mobileNav.hidden = true; menuBtn.setAttribute("aria-expanded", "false"); menuBtn.textContent = "메뉴";
 }));
 
 /* ---------- cases ---------- */
 const tabs = document.getElementById("caseTabs");
 const headingEl = document.getElementById("caseHeading");
-const briefEl = document.getElementById("caseBrief");
+const filtersEl = document.getElementById("spaceFilters");
 const galleryEl = document.getElementById("caseGallery");
-const footerEl = document.getElementById("caseFooter");
+const galleryStatusEl = document.getElementById("galleryStatus");
 const compareEl = document.getElementById("caseCompare");
 let current = 0;
+let activeCategory = "전체";
+let activeProjectPhotos = [];
 
-CASES.forEach((c, i) => {
-  const b = document.createElement("button");
-  b.type = "button";
-  b.setAttribute("role", "tab");
-  b.setAttribute("aria-selected", String(i === 0));
-  b.textContent = c.tab;
-  b.onclick = () => selectCase(i);
-  tabs.appendChild(b);
-});
+function getPhotoCategories(item) {
+  return normalizeMedia(item).category.split("·").map(value => value.trim()).filter(Boolean);
+}
 
-function selectCase(i) {
-  current = i;
-  const c = CASES[i];
-  [...tabs.children].forEach((b, k) => b.setAttribute("aria-selected", String(k === i)));
+function getCategoryCounts(photos) {
+  return photos.reduce((counts, item) => {
+    getPhotoCategories(item).forEach(category => {
+      counts.set(category, (counts.get(category) || 0) + 1);
+    });
+    return counts;
+  }, new Map());
+}
 
-  headingEl.innerHTML = '<h3><span>' + c.no + '</span>' + c.name + '</h3><p>' + c.meta + '</p>';
-  const metaParts = c.meta.split('·').map(part => part.trim());
-  const compareCount = c.compares ? c.compares.length : 0;
-  const recordLabel = mediaCountLabel(c.photos) + (compareCount ? ' · 전후 ' + compareCount + '쌍' : '');
-  briefEl.innerHTML = '<section class="case-brief" aria-label="사례 ' + c.no + ' 프로젝트 정보">' +
-    '<div class="case-facts"><h4>Project facts</h4><div class="case-facts-grid">' +
-      '<div><small>공간</small><strong>' + escapeHtml(metaParts[0] || '주거공간') + '</strong></div>' +
-      '<div><small>공사 범위</small><strong>' + escapeHtml(metaParts[1] || c.name) + '</strong></div>' +
-      '<div><small>기록</small><strong>' + escapeHtml(recordLabel) + '</strong></div>' +
-      '<div><small>사진 자료</small><strong>실제 현장 직접 촬영</strong></div>' +
-    '</div></div>' +
-    '<div class="case-points"><h4>핵심 시공 포인트</h4><ol>' + c.points.map(point => '<li>' + escapeHtml(point) + '</li>').join('') + '</ol></div>' +
-  '</section>';
+function renderSpaceFilters(c) {
+  const counts = getCategoryCounts(c.photos);
+  const filters = [["전체", c.photos.length], ...counts.entries()];
+  filtersEl.innerHTML = filters.map(([category, count]) =>
+    '<button type="button" aria-pressed="' + String(category === activeCategory) + '" data-category="' +
+      escapeHtml(category) + '">' + escapeHtml(category) + ' <span>(' + count + ')</span></button>'
+  ).join("");
 
-  galleryEl.innerHTML = c.photos.map((item, k) => {
+  filtersEl.querySelectorAll("button").forEach(button => {
+    button.addEventListener("click", () => {
+      activeCategory = button.dataset.category;
+      renderSpaceFilters(c);
+      renderProjectGallery(c);
+    });
+  });
+}
+
+function renderProjectGallery(c) {
+  activeProjectPhotos = activeCategory === "전체"
+    ? c.photos
+    : c.photos.filter(item => getPhotoCategories(item).includes(activeCategory));
+
+  galleryEl.innerHTML = activeProjectPhotos.map((item, k) => {
     const p = normalizeMedia(item);
     return (
     '<figure' + (k === 0 ? ' class="gallery-feature"' : '') + '>' +
@@ -703,43 +568,54 @@ function selectCase(i) {
         '<span class="photo-caption"><strong>' + escapeHtml(p.title) + '</strong><em>' + String(k + 1).padStart(2, "0") + '</em></span>' +
       '</button></figure>');
   }).join("");
-  galleryEl.querySelectorAll(".photo-button").forEach(b =>
-    b.addEventListener("click", () => openModal(Number(b.dataset.i))));
 
-  footerEl.innerHTML = '<p>' + c.note + '</p><div class="project-actions">' +
-    '<button class="line-link" type="button" id="viewAll">' + (c.photos.some(item => normalizeMedia(item).type === 'video') ? '사진·영상 전체 보기' : '사진 전체 보기') + ' <span>→</span></button>' +
-    '<a class="line-link" href="joeun-design-estimate.html">이 사례처럼 상담 준비 <span>↗</span></a></div>';
-  document.getElementById("viewAll").onclick = () => openModal(0);
+  galleryEl.querySelectorAll(".photo-button").forEach(button =>
+    button.addEventListener("click", () => openModal(Number(button.dataset.i))));
+  galleryStatusEl.textContent = activeCategory + " 사진 " + activeProjectPhotos.length + "장을 표시했습니다.";
+}
 
-  if (c.highlights) {
-    briefEl.after(compareEl);
-    const story = c.highlights;
-    compareEl.innerHTML = '<section class="case-story" aria-label="시공 사례 이야기"><div class="case-story-intro"><p class="eyebrow">완성 사진으로 살펴보는 공간</p><h3>' + story.title + '</h3><p>' + story.intro + '</p></div>' +
-      '<div class="story-highlights">' + story.spaces.map((space, index) => {
-        const photo = normalizeMedia(c.photos[space.photo]);
-        return '<article class="story-space"><button type="button" class="photo-button story-photo" data-photo="' + space.photo + '" aria-label="' + escapeHtml(photo.title) + ' 크게 보기"><span class="photo-frame">' + mediaPreview(photo, photo.title) + '<span class="expand">' + (photo.type === 'video' ? '▶' : '＋') + '</span>' + (photo.type === 'video' ? '<span class="media-kind">▶ 영상</span>' : '') + '</span></button><div class="story-copy"><h4><small>0' + (index + 1) + '</small>' + space.title + '</h4><p>' + space.text + '</p></div></article>';
-      }).join('') + '</div></section><h4 class="story-gallery-title">완성된 공간 더 살펴보기</h4>';
-    compareEl.querySelectorAll('[data-photo]').forEach(button => button.addEventListener('click', () => openModal(Number(button.dataset.photo))));
-  } else if (c.compares && c.compares.length) {
-    briefEl.after(compareEl);
-    const story = c.story || {
-      title: "시공 전과 후, 달라진 공간",
-      intro: "같은 현장의 변화를 시공 전후 사진으로 확인해 보세요.",
-      spaces: c.compares.map(() => ({title: "공간 변화", text: "손잡이를 좌우로 밀어 시공 전과 후를 비교할 수 있습니다."}))
-    };
-    compareEl.innerHTML = '<section class="case-story" aria-label="시공 전후 비교">' +
-      '<div class="case-story-intro"><p class="eyebrow">공간의 변화 기록</p><h3>' + story.title + '</h3><p>' + story.intro + '</p></div></section>' +
-      '<section class="reveal-section"><h3>손잡이를 밀어 전후를 비교해 보세요</h3><p>' + (c.compareNote || "같은 현장의 같은 공간입니다.") + '</p>' +
+CASES.forEach((c, i) => {
+  const b = document.createElement("button");
+  const cover = normalizeMedia(c.photos[0]);
+  b.type = "button";
+  b.className = "project-card";
+  b.setAttribute("role", "tab");
+  b.setAttribute("aria-selected", String(i === 0));
+  b.setAttribute("aria-label", c.tab + " " + c.name + " 선택");
+  b.innerHTML = '<span class="project-card-media">' + mediaPreview(cover, cover.title) + '</span>' +
+    '<span class="project-card-copy"><strong>' + escapeHtml(cover.title) + '</strong><small>' +
+    escapeHtml(c.name) + '</small></span>';
+  b.onclick = () => {
+    selectCase(i);
+    document.getElementById("selectedProject").scrollIntoView({
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+      block: "start"
+    });
+  };
+  tabs.appendChild(b);
+});
+
+function selectCase(i) {
+  current = i;
+  const c = CASES[i];
+  const cover = normalizeMedia(c.photos[0]);
+  activeCategory = "전체";
+  [...tabs.children].forEach((b, k) => b.setAttribute("aria-selected", String(k === i)));
+
+  headingEl.innerHTML = '<h3>' + escapeHtml(cover.title) + '</h3><p>' + escapeHtml(c.name) + '</p>';
+  renderSpaceFilters(c);
+  renderProjectGallery(c);
+
+  if (c.compares && c.compares.length) {
+    compareEl.innerHTML = '<section class="reveal-section compact-compare"><h3>시공 전과 후</h3>' +
       c.compares.map((cp, index) => {
-        const space = story.spaces[index] || {title: "공간 변화", text: "시공 전과 후의 변화를 비교합니다."};
-        return '<article class="reveal-item"><div class="reveal-copy"><h4>0' + (index + 1) + ' · ' + space.title + '</h4><p>' + space.text + '</p></div>' +
-          '<figure class="reveal-pair"><div class="reveal-stage" style="--split:50%">' +
+        return '<article class="reveal-item"><figure class="reveal-pair"><div class="reveal-stage" style="--split:50%">' +
           '<img src="' + A + cp.after[0] + '" alt="' + cp.after[1] + '">' +
           '<img class="reveal-before" src="' + A + cp.before[0] + '" alt="' + cp.before[1] + '">' +
           '<span class="reveal-label before">시공 전</span><span class="reveal-label after">시공 후</span>' +
           '<span class="reveal-line" aria-hidden="true"><b>↔</b></span></div>' +
-          '<label class="reveal-control">시공 전후 비교<input type="range" min="0" max="100" value="50" aria-label="' + space.title + ' 시공 전 사진 표시 비율"></label></figure></article>';
-      }).join('') + '</section><h4 class="story-gallery-title">완성된 공간 더 살펴보기</h4>';
+          '<label class="reveal-control">시공 전후 비교<input type="range" min="0" max="100" value="50" aria-label="시공 전 사진 표시 비율"></label></figure></article>';
+      }).join('') + '</section>';
     compareEl.querySelectorAll('input[type="range"]').forEach(input => {
       const item = input.closest('.reveal-item');
       const stage = item.querySelector('.reveal-stage');
@@ -760,7 +636,6 @@ function selectCase(i) {
       });
     });
   } else {
-    footerEl.after(compareEl);
     compareEl.innerHTML = "";
   }
 }
@@ -894,7 +769,7 @@ document.getElementById("onsiteGrid").innerHTML = processAlbums.map((album, i) =
   const cover = album.cover ? {type: 'image', src: album.cover, title: album.title + ' 대표사진'} : album.photos[0];
   const hasVideo = album.photos.some(item => normalizeMedia(item).type === 'video');
   const count = mediaCountLabel(album.photos);
-  return '<figure><button type="button" class="photo-button" data-album="' + i + '" aria-label="' + escapeHtml(album.title) + ' ' + count + ' 보기"><span class="photo-frame">' + mediaPreview(cover, album.title + ' 대표사진') + '<span class="expand">' + (hasVideo ? '▶' : '＋') + '</span>' + (hasVideo ? '<span class="media-kind">▶ 영상 포함</span>' : '') + '</span><span style="display:block;padding:12px 15px"><strong>' + escapeHtml(album.title) + '</strong> · ' + count + '</span></button><figcaption><small>' + album.body + '</small></figcaption></figure>';
+  return '<figure><button type="button" class="photo-button" data-album="' + i + '" aria-label="' + escapeHtml(album.title) + ' ' + count + ' 보기"><span class="photo-frame">' + mediaPreview(cover, album.title + ' 대표사진') + '<span class="expand">' + (hasVideo ? '▶' : '＋') + '</span>' + (hasVideo ? '<span class="media-kind">▶ 영상 포함</span>' : '') + '</span><span style="display:block;padding:12px 0"><strong>' + escapeHtml(album.title) + '</strong></span></button></figure>';
 }).join("");
 document.querySelectorAll('[data-album]').forEach(button => button.addEventListener('click', () => {
   activeAlbum = processAlbums[Number(button.dataset.album)];
@@ -914,7 +789,8 @@ let returnFocus = null;
 
 function renderModal() {
   const c = activeAlbum || CASES[current];
-  const p = normalizeMedia(c.photos[mIdx]);
+  const photos = activeAlbum ? c.photos : activeProjectPhotos;
+  const p = normalizeMedia(photos[mIdx]);
   modalVideo.pause();
   modalVideo.removeAttribute('src');
   modalVideo.removeAttribute('poster');
@@ -933,14 +809,14 @@ function renderModal() {
     modalImg.alt = p.title;
     modalImg.hidden = false;
   }
-  modalProject.textContent = activeAlbum ? activeAlbum.title : "사례 " + c.no + " · " + p.category;
+  modalProject.textContent = activeAlbum ? activeAlbum.title : c.name;
   modalTitle.textContent = p.title;
-  modalIndex.textContent = String(mIdx + 1).padStart(2, "0") + " / " + String(c.photos.length).padStart(2, "0");
+  modalIndex.textContent = String(mIdx + 1).padStart(2, "0") + " / " + String(photos.length).padStart(2, "0");
 }
 function showModal(i) { returnFocus = document.activeElement; mIdx = i; modal.hidden = false; document.body.style.overflow = "hidden"; renderModal(); document.getElementById("modalClose").focus(); }
 function openModal(i) { activeAlbum = null; showModal(i); }
 function closeModal() { modalVideo.pause(); modalVideo.removeAttribute('src'); modalVideo.load(); mIdx = null; modal.hidden = true; document.body.style.overflow = ""; returnFocus?.focus(); }
-function step(d) { const n = (activeAlbum || CASES[current]).photos.length; mIdx = (mIdx + d + n) % n; renderModal(); }
+function step(d) { const n = activeAlbum ? activeAlbum.photos.length : activeProjectPhotos.length; mIdx = (mIdx + d + n) % n; renderModal(); }
 
 document.getElementById("modalClose").onclick = closeModal;
 document.getElementById("modalPrev").onclick = () => step(-1);
@@ -952,56 +828,6 @@ window.addEventListener("keydown", e => {
   if (e.key === "ArrowRight") step(1);
   if (e.key === "ArrowLeft") step(-1);
 });
-/* Background music: respect browser autoplay rules and saved opt-out. */
-const backgroundMusic = document.getElementById('backgroundMusic');
-const musicToggle = document.getElementById('musicToggle');
-modalVideo.addEventListener('play', () => {
-  if (!backgroundMusic.paused) backgroundMusic.pause();
-});
-const musicPreferenceKey = 'joeun-background-music';
-let musicPending = false;
-function saveMusicPreference(value) {
-  try { localStorage.setItem(musicPreferenceKey, value); } catch {}
-}
-function updateMusicButton() {
-  const playing = !backgroundMusic.paused;
-  musicToggle.innerHTML = '<span class="music-icon" aria-hidden="true">' + (playing ? 'Ⅱ' : '♫') +
-    '</span><span class="music-label">' + (playing ? '음악 끄기' : '음악과 함께 둘러보기') + '</span>';
-  musicToggle.setAttribute('aria-label', playing ? '배경음악 끄기' : '배경음악 켜기');
-  musicToggle.setAttribute('aria-pressed', String(playing));
-}
-async function startMusic() {
-  if (musicPending) return;
-  musicPending = true;
-  try {
-    await backgroundMusic.play();
-  } catch (error) {
-    updateMusicButton();
-    if (error.name !== 'NotAllowedError' && error.name !== 'AbortError') {
-      musicToggle.textContent = '♫ 음악 다시 재생';
-    }
-  } finally { musicPending = false; }
-}
-backgroundMusic.volume = 0.22;
-backgroundMusic.addEventListener('play', updateMusicButton);
-backgroundMusic.addEventListener('pause', updateMusicButton);
-backgroundMusic.addEventListener('error', () => {
-  musicToggle.textContent = '음원을 불러오지 못했어요';
-  musicToggle.disabled = true;
-  musicToggle.setAttribute('aria-pressed', 'false');
-});
-musicToggle.addEventListener('click', () => {
-  if (!backgroundMusic.paused) {
-    backgroundMusic.pause();
-    saveMusicPreference('off');
-  } else {
-    saveMusicPreference('on');
-    startMusic();
-  }
-});
-let musicOptedIn = false;
-try { musicOptedIn = localStorage.getItem(musicPreferenceKey) === 'on'; } catch {}
-if (musicOptedIn) startMusic();
 </script>
 </body>
 </html>
