@@ -184,6 +184,40 @@ DEPLOY_SUCCEEDED="true"
 trap - EXIT
 
 echo ""
+echo "[기록] 릴리스 작업 기록 생성"
+WORK_LOG_PATH="$ROOT_DIR/docs/work-log/${RELEASE_DATE}-release-${RELEASE_TAG}.md"
+{
+  echo "# 홈페이지 릴리스 작업 기록"
+  echo
+  echo "- 배포일: ${RELEASE_DATE:0:4}-${RELEASE_DATE:4:2}-${RELEASE_DATE:6:2} (서울 기준)"
+  echo "- 릴리스: \`$RELEASE_TAG\`"
+  echo "- 기준 커밋: \`$RELEASE_COMMIT\`"
+  echo "- 작업 요약: $COMMIT_MESSAGE"
+  echo "- 운영 배포: 완료"
+  echo
+  echo "## 확인 결과"
+  echo
+  echo "- 원본 검사, 배포 산출물 생성, 빌드·린트 검사를 통과했습니다."
+  echo "- S3 업로드와 CloudFront 캐시 갱신을 완료했습니다."
+  echo "- 공개 주소의 배포 파일 확인을 완료했습니다."
+  echo
+  echo "## 이번 릴리스의 변경 파일"
+  echo
+  git diff-tree --no-commit-id --name-only -r "$RELEASE_COMMIT" | sed 's/^/- `/; s/$/`/'
+  echo
+  echo "이 기록은 운영 배포가 성공한 뒤 배포 스크립트가 자동으로 생성했습니다."
+} > "$WORK_LOG_PATH"
+
+GIT_AUTHOR_NAME="$GIT_AUTHOR_NAME" GIT_AUTHOR_EMAIL="$GIT_AUTHOR_EMAIL" \
+GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME" GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL" \
+  git add "$WORK_LOG_PATH" && \
+GIT_AUTHOR_NAME="$GIT_AUTHOR_NAME" GIT_AUTHOR_EMAIL="$GIT_AUTHOR_EMAIL" \
+GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME" GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL" \
+  git commit -m "docs: $RELEASE_TAG 작업 기록 추가"
+git push "$GIT_REMOTE" "HEAD:$GIT_BRANCH"
+
+echo ""
 echo "릴리스 및 배포 완료"
 echo "태그: $RELEASE_TAG"
 echo "커밋: $RELEASE_COMMIT"
+echo "작업 기록: $WORK_LOG_PATH"

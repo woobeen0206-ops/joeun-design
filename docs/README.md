@@ -17,5 +17,5 @@
 - `.codex/docs/decisions.md`: 개발 환경과 배포 구조에 관한 기술 결정
 - `AGENTS.md`: 프로젝트 전체 작업 규칙
 
-새 작업 기록은 `work-log/YYYY-MM-DD-짧은-제목.md` 형식으로 만들고, 문서 안에 관련 커밋이나 확인 방법을 적습니다. 공개 고객 정보, 비밀번호, 운영 비밀값은 기록하지 않습니다.
+새 작업 기록은 `work-log/YYYY-MM-DD-짧은-제목.md` 형식으로 만들고, 문서 안에 관련 커밋이나 확인 방법을 적습니다. `올려.command`로 운영 배포가 성공하면 `work-log/YYYYMMDD-release-vYYYYMMDD.0.N.md` 형식의 릴리스 기록이 자동으로 생성되어 GitHub에 올라갑니다. 공개 고객 정보, 비밀번호, 운영 비밀값은 기록하지 않습니다.
 
