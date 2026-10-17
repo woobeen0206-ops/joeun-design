@@ -83,7 +83,7 @@ function selectMaterial(index) {
   sourceLink.hidden = !material.source;
   if (material.source) sourceLink.href = material.source;
   else sourceLink.removeAttribute("href");
-  document.querySelector("#material-status").textContent = material.code ? "공식 품번 확인 · AI 적용 예시" : "조은 디자인 제안 사양";
+  document.querySelector("#material-status").textContent = material.code ? "공식 품번 확인 · 컨셉 이미지" : "조은 디자인 제안 사양";
   document.querySelectorAll("[data-point]").forEach((button) => {
     const active = Number(button.dataset.point) === index;
     button.classList.toggle("is-active", active);
@@ -103,7 +103,7 @@ function selectMaterial(index) {
 function selectRoom(key) {
   selectedRoom = rooms.find((room) => room.key === key);
   roomImage.src = selectedRoom.image || ("projects-assets/concepts/concept-" + key + "-greige-01." + (key === "bathroom" ? "jpg" : "webp"));
-  roomImage.alt = "AI 컨셉 · " + selectedRoom.label + " · 실제 시공 사진 아님";
+  roomImage.alt = selectedRoom.label + " 컨셉 이미지";
   document.querySelectorAll("[data-room]").forEach((button) => {
     button.setAttribute("aria-pressed", String(button.dataset.room === key));
   });

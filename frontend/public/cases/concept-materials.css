@@ -45,7 +45,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .eyebrow { margin: 0; color: #7a6c5b; font-size: .7rem; letter-spacing: .18em; }
 .intro { padding-block: clamp(74px, 9vw, 140px) clamp(60px, 8vw, 120px); }
-.intro-grid { display: grid; grid-template-columns: 1.12fr .88fr; gap: clamp(50px, 10vw, 170px); align-items: end; }
+.intro-grid { display: block; }
 .intro h1 {
   margin: 24px 0 0;
   font-family: inherit;
@@ -138,8 +138,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .site-footer { display: flex; padding-block: 28px; justify-content: space-between; gap: 30px; border-top: 1px solid var(--line); color: var(--muted); font-size: .68rem; }
 
 @media (max-width: 900px) {
-  .intro-grid { grid-template-columns: 1fr; gap: 44px; }
-  .intro-copy { margin-left: auto; }
   .explorer-grid { grid-template-columns: 1fr; min-height: 0; }
   .concept-figure { aspect-ratio: 16 / 10; }
   .material-panel { min-height: 540px; }
