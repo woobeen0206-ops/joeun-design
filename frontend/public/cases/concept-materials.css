@@ -48,11 +48,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .intro-grid { display: grid; grid-template-columns: 1.12fr .88fr; gap: clamp(50px, 10vw, 170px); align-items: end; }
 .intro h1 {
   margin: 24px 0 0;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: inherit;
   font-size: clamp(3rem, 6.2vw, 6.6rem);
-  font-weight: 400;
+  font-weight: 650;
   line-height: 1.06;
-  letter-spacing: -.065em;
+  letter-spacing: -.075em;
 }
 .intro-copy { max-width: 510px; padding-bottom: 8px; }
 .intro-copy > p { margin: 0; color: var(--muted); font-size: .96rem; line-height: 1.9; word-break: keep-all; }
