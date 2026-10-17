@@ -1,0 +1,57 @@
+/* Approved concept-gallery direction: existing brand, quiet motion, consistent framing.
+   Design variance 4 / motion 2 / density 3. Original photographs remain unaltered. */
+.concept-entry { display:grid; grid-template-columns:1.2fr 1fr; gap:48px; align-items:center; padding-block:40px 100px; }
+.concept-entry-image { position:relative; display:block; }
+.concept-entry-image img { display:block; width:100%; height:auto; }
+.concept-entry-image span { position:absolute; top:16px; left:16px; padding:9px 12px; background:#25372fe6; color:#fff; font-size:.65rem; letter-spacing:.05em; }
+.concept-entry-copy h2 { margin:18px 0; font-size:clamp(1.7rem,2.7vw,2.7rem); line-height:1.4; letter-spacing:-.045em; word-break:keep-all; }
+.concept-entry-copy>p:not(.eyebrow) { color:#6f746d; line-height:1.9; word-break:keep-all; }
+.concept-entry-copy .line-link { margin-top:24px; }
+.concept-entry-copy small { display:block; margin-top:24px; color:#6f746d; font-size:.72rem; line-height:1.8; }
+@media(max-width:900px) { .concept-entry { grid-template-columns:1fr; gap:28px; padding-block:24px 64px; } }
+.work-section { --ink:#25372f; --soft:#6f746d; --line:#d4d1c7; }
+.case-tabs { grid-template-columns:repeat(3,minmax(0,1fr)); gap:32px 22px; }
+.case-tabs .project-card,
+.case-tabs .project-card:nth-child(4n+1),
+.case-tabs .project-card:nth-child(4n+4) { grid-column:auto; }
+.case-tabs .project-card .project-card-media { aspect-ratio:3/2; }
+.project-card-copy { display:block; padding-top:12px; }
+.project-card-copy small { display:block; margin-top:6px; }
+.selected-project { margin-top:72px; padding-top:36px; }
+.project-heading { grid-template-columns:1fr; gap:14px; }
+.project-heading h3 { font-size:clamp(1.9rem,3.5vw,3.3rem); line-height:1.25; }
+.project-heading p { text-align:left; }
+.space-filters button { border-radius:0; min-height:44px; }
+#caseGallery { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px; margin-top:28px; }
+#caseGallery figure,#caseGallery figure:nth-child(n) { grid-column:auto; min-width:0; }
+#caseGallery .photo-button { height:100%; padding-bottom:12px; border-bottom:2px solid var(--line); }
+#caseGallery .photo-button[aria-pressed=true] { border-color:var(--ink); }
+#caseGallery .photo-frame img,#caseGallery figure:nth-child(n) .photo-frame img { height:auto; aspect-ratio:3/2; object-fit:cover; }
+#caseGallery .photo-caption { margin-top:9px; padding-top:0; font-size:.78rem; line-height:1.6; }
+#caseGallery .expand { display:none; }
+.case-viewer { display:grid; grid-template-columns:minmax(0,2fr) minmax(280px,.8fr); margin-top:30px; align-items:start; }
+.case-viewer-photo { margin:0; min-width:0; background:#e5e1d7; }
+.case-viewer-photo .photo-button { position:relative; }
+.case-viewer-photo img { width:100%; height:auto; max-height:760px; aspect-ratio:3/2; object-fit:contain; }
+.viewer-expand { position:absolute; bottom:14px; right:14px; background:#faf8f3ed; padding:10px 14px; font-size:.75rem; }
+.case-viewer-copy { padding:30px; background:#ebe7dc; }
+.case-viewer-meta { display:flex; justify-content:space-between; color:#6a6255; font-size:.72rem; }
+.case-viewer-category { margin-top:34px; color:#726551; font-size:.8rem; }
+.case-viewer-copy h4 { font-size:clamp(1.3rem,2vw,1.9rem); margin:12px 0 26px; line-height:1.4; letter-spacing:-.045em; word-break:keep-all; }
+.case-viewer-copy dl { margin:0; }
+.case-viewer-copy dl>div { padding:16px 0; border-top:1px solid #c7c2b5; }
+.case-viewer-copy dt { color:#726551; font-size:.7rem; margin-bottom:6px; }
+.case-viewer-copy dd { margin:0; font-size:.83rem; line-height:1.8; word-break:keep-all; }
+.case-viewer-controls { display:flex; justify-content:space-between; gap:12px; margin-top:24px; }
+.case-viewer-controls button { min-height:44px; padding:10px 16px; border:1px solid #9b9a8c; background:transparent; font-size:.8rem; }
+.case-viewer-controls button:hover { background:#25372f; color:#fff; }
+@media(max-width:1000px) { .case-viewer { grid-template-columns:1fr; } .case-viewer-photo img { max-height:640px; } }
+@media(max-width:640px) {
+  .case-tabs { grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px 14px; }
+  .project-card-copy strong { font-size:.85rem; }
+  .project-card-copy small { font-size:.65rem; }
+  .selected-project { margin-top:54px; }
+  #caseGallery { grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px 12px; }
+  .case-viewer-copy { padding:24px; }
+  .case-viewer-category { margin-top:24px; }
+}

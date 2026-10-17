@@ -174,6 +174,7 @@ img{display:block;width:100%;object-fit:cover}:focus-visible{outline:3px solid #
 .face-profile{fill:none;stroke:var(--ink);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
 </style>
 <link rel="stylesheet" href="redesign.css" />
+<link rel="stylesheet" href="case-editorial.css" />
 </head>
 <body>
 <a class="skip-link" href="#main">본문으로 바로가기</a>
@@ -183,12 +184,12 @@ img{display:block;width:100%;object-fit:cover}:focus-visible{outline:3px solid #
     <img class="brand-logo" src="assets/brand/joeun-design-logo.svg" alt="조은 디자인" />
   </a>
   <nav class="desktop-nav" aria-label="주요 메뉴">
-    <a href="#projects">시공 사례</a><a href="#onsite">시공 과정</a><a href="#studio">스튜디오</a><a href="#process">진행 안내</a>
+    <a href="#projects">시공 사례</a><a href="concept-materials.html">컨셉 · 자재</a><a href="#onsite">시공 과정</a><a href="#studio">스튜디오</a><a href="#process">진행 안내</a>
     <a class="nav-cta" href="joeun-design-estimate.html">무료 견적 준비 ↗</a>
   </nav>
   <button class="menu-button" type="button" id="menuBtn" aria-expanded="false" aria-controls="mobile-nav">메뉴</button>
   <nav id="mobile-nav" class="mobile-nav" aria-label="모바일 메뉴" hidden>
-    <a href="#projects">시공 사례</a><a href="#onsite">시공 과정</a><a href="#studio">스튜디오</a><a href="#process">진행 안내</a>
+    <a href="#projects">시공 사례</a><a href="concept-materials.html">컨셉 · 자재</a><a href="#onsite">시공 과정</a><a href="#studio">스튜디오</a><a href="#process">진행 안내</a>
     <a href="joeun-design-estimate.html">무료 견적 준비</a>
   </nav>
 </header>
@@ -227,7 +228,7 @@ img{display:block;width:100%;object-fit:cover}:focus-visible{outline:3px solid #
   <nav class="shortcut-bar" aria-label="빠른 메뉴">
     <a href="#projects"><img src="projects-assets/case01-01-kitchen.jpg" alt="" /><span>시공 사례</span></a>
     <a href="#onsite"><img src="projects-assets/onsite-05-tile.jpg" alt="" /><span>시공 과정</span></a>
-    <a href="#studio"><span class="shortcut-icon">03</span><span>디자인 철학</span></a>
+    <a href="concept-materials.html"><img src="projects-assets/concepts/concept-living-lx-pr056-01.webp" alt="" /><span>컨셉 · 자재</span></a>
     <a href="joeun-design-estimate.html"><span class="shortcut-icon">↗</span><span>무료 견적 준비</span></a>
   </nav>
 
@@ -246,8 +247,23 @@ img{display:block;width:100%;object-fit:cover}:focus-visible{outline:3px solid #
       <div id="caseHeading" class="project-heading"></div>
       <div id="spaceFilters" class="space-filters" aria-label="공간별 사진 보기"></div>
       <div id="caseGallery" class="gallery-grid"></div>
+      <div id="caseViewer" class="case-viewer" aria-label="선택한 공간 상세"></div>
       <p id="galleryStatus" class="visually-hidden" aria-live="polite"></p>
       <div id="caseCompare"></div>
+    </div>
+  </section>
+
+  <section class="page-wrap concept-entry" aria-labelledby="concept-entry-title">
+    <a class="concept-entry-image" href="concept-materials.html" aria-label="컨셉 사진과 자재 가이드 보기">
+      <img src="projects-assets/concepts/concept-living-lx-pr056-01.webp" width="1536" height="1024" loading="lazy" alt="밝은 린넨 질감 벽지와 오크 수납장을 조합한 거실 AI 컨셉" />
+      <span>AI CONCEPT · 실제 시공 사진 아님</span>
+    </a>
+    <div class="concept-entry-copy">
+      <p class="eyebrow">Concept &amp; materials</p>
+      <h2 id="concept-entry-title">우리 집에 어울리는<br />분위기와 자재를 찾아보세요.</h2>
+      <p>주방, 거실, 현관, 욕실의 컨셉 사진에서 번호를 눌러 자재와 조합을 살펴보세요.</p>
+      <a class="line-link" href="concept-materials.html">컨셉 사진 · 자재 둘러보기 <span>↗</span></a>
+      <small>AI로 제작한 상담용 이미지입니다. 실제 시공 사례와 구분하며, 최종 자재는 실물 샘플로 확인합니다.</small>
     </div>
   </section>
 
@@ -562,7 +578,7 @@ function renderProjectGallery(c) {
     const p = normalizeMedia(item);
     return (
     '<figure' + (k === 0 ? ' class="gallery-feature"' : '') + '>' +
-      '<button class="photo-button" type="button" data-i="' + k + '">' +
+      '<button class="photo-button" type="button" data-i="' + k + '" aria-pressed="' + String(k === 0) + '" aria-controls="caseViewer">' +
         '<span class="photo-frame">' + mediaPreview(p, p.title, k !== 0) +
         '<span class="expand">' + (p.type === 'video' ? '▶' : '＋') + '</span>' + (p.type === 'video' ? '<span class="media-kind">▶ 영상</span>' : '') + '</span>' +
         '<span class="photo-caption"><strong>' + escapeHtml(p.title) + '</strong><em>' + String(k + 1).padStart(2, "0") + '</em></span>' +
@@ -570,8 +586,54 @@ function renderProjectGallery(c) {
   }).join("");
 
   galleryEl.querySelectorAll(".photo-button").forEach(button =>
-    button.addEventListener("click", () => openModal(Number(button.dataset.i))));
+    button.addEventListener("click", () => renderCasePhoto(Number(button.dataset.i))));
+  renderCasePhoto(0);
   galleryStatusEl.textContent = activeCategory + " 사진 " + activeProjectPhotos.length + "장을 표시했습니다.";
+}
+
+const spaceAdvice = {
+  "주방": "상판과 도어의 실물 색감, 수전 위치, 가전 규격을 함께 맞춥니다.",
+  "거실": "벽과 바닥의 색감, 낮과 밤의 조명, 가구 배치에 따른 동선을 함께 살핍니다.",
+  "욕실": "타일과 줄눈의 색, 젖은 바닥의 미끄럼, 수전과 도기의 규격을 확인합니다.",
+  "현관": "신발장 깊이, 중문 열림, 바닥 단차와 조명 위치를 함께 확인합니다.",
+  "중문": "프레임과 유리의 색, 문 열림 방향, 출입 동선의 간섭을 확인합니다.",
+  "수납": "도어 마감과 내부 수납, 손잡이 방식, 사용할 물건의 크기를 확인합니다.",
+  "복도": "벽과 문틀의 마감, 바닥 연결, 조명 간격을 함께 확인합니다.",
+  "다이닝": "테이블 크기와 의자 이동 공간, 상판 마감과 조명 위치를 확인합니다."
+};
+
+function renderCasePhoto(index) {
+  const viewer = document.getElementById("caseViewer");
+  if (!activeProjectPhotos.length) {
+    viewer.innerHTML = '<p>이 공간에 등록된 사진이 없습니다.</p>';
+    return;
+  }
+  const p = normalizeMedia(activeProjectPhotos[index]);
+  const c = CASES[current];
+  const category = getPhotoCategories(p)[0];
+  galleryEl.querySelectorAll(".photo-button").forEach((button, i) =>
+    button.setAttribute("aria-pressed", String(i === index)));
+  viewer.innerHTML =
+    '<figure class="case-viewer-photo"><button type="button" class="photo-button" id="casePhotoExpand" aria-label="' + escapeHtml(p.title) + ' 원본 확대">' +
+    mediaPreview(p, p.title, false) + '<span class="viewer-expand">' + (p.type === "video" ? "영상 재생" : "원본 확대") + ' ↗</span></button></figure>' +
+    '<aside class="case-viewer-copy" aria-live="polite"><div class="case-viewer-meta"><span>' + escapeHtml(c.tab) + '</span><span>' +
+    String(index + 1).padStart(2, "0") + ' / ' + String(activeProjectPhotos.length).padStart(2, "0") + '</span></div>' +
+    '<p class="case-viewer-category">' + escapeHtml(p.category) + '</p><h4>' + escapeHtml(p.title) + '</h4>' +
+    '<dl><div><dt>시공 범위</dt><dd>' + escapeHtml(c.name) + '</dd></div>' +
+    '<div><dt>상담 시 함께 볼 부분</dt><dd>' + escapeHtml(spaceAdvice[category] || "공간의 동선과 마감 색상, 조명과 수납 구성을 함께 확인합니다.") + '</dd></div>' +
+    '<div><dt>자재 정보</dt><dd>제품명·품번은 현장 자재 기록 확인 후 안내합니다.</dd></div></dl>' +
+    '<div class="case-viewer-controls"><button type="button" id="casePhotoPrev" aria-label="이전 공간 사진">← 이전</button>' +
+    '<button type="button" id="casePhotoNext" aria-label="다음 공간 사진">다음 →</button></div></aside>';
+  document.getElementById("casePhotoExpand").onclick = () => openModal(index);
+  document.getElementById("casePhotoPrev").onclick = () => {
+    renderCasePhoto((index - 1 + activeProjectPhotos.length) % activeProjectPhotos.length);
+    document.getElementById("casePhotoPrev").focus({preventScroll: true});
+  };
+  document.getElementById("casePhotoNext").onclick = () => {
+    renderCasePhoto((index + 1) % activeProjectPhotos.length);
+    document.getElementById("casePhotoNext").focus({preventScroll: true});
+  };
+  galleryStatusEl.textContent = p.category + " · " + p.title;
 }
 
 CASES.forEach((c, i) => {

@@ -1,0 +1,5 @@
+# 거실 도배 마감 수정
+
+내장 imagegen으로 기존 거실 이미지의 벽면 마감만 변경. 출력: concept-living-wallpaper-02.webp. 기존 포세린 버전은 보관.
+
+Use case: precise-object-edit. Edit the supplied living-room architectural photograph. Change ONLY the large TV feature wall finish, including the visible wall below the floating cabinet, from stone/porcelain panels to warm light greige SILK WALLPAPER with extremely subtle fine woven-linen emboss, elegant matte finish. This is Korean apartment wallpaper, no stone veins, no panel joint grid, no tiles, no heavy plaster swirls, no exaggerated fabric stripes; seams nearly invisible. Choose a soft warm greige-beige lighter than the original stone, beautifully compatible with existing natural oak console and ivory curtains. Preserve EXACT camera position, 3:2 composition, room geometry, black TV, floating oak cabinet, oak trim on right, sofa, coffee table, rug, curtains, daylight, accessories and ceiling cove lighting. Adjust only the way light falls on the new wallpaper for physical realism. Photorealistic architectural A-cut, subtle material texture, no text, numbers, logos or watermark.

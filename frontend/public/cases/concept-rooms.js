@@ -1,0 +1,277 @@
+/* AI 컨셉용 제안 사양. 제조사·품번·실제 시공 실적을 의미하지 않습니다. */
+window.conceptRooms = [
+  {
+    "key": "kitchen",
+    "label": "주방 메인",
+    "en": "KITCHEN · A CUT",
+    "title": "돌과 오크로 완성한 주방",
+    "formula": "그레이지 스톤 상판 + 스모크 오크 하부 + 웜 뉴트럴 무광 도어",
+    "prompt": "Use case: photorealistic-natural. Create one single landscape 3:2 architectural editorial A-cut photograph, not collage. Reference image is ONLY a material and mood reference; create a different room of the same envisioned Korean apartment. Match its warm greige limestone-look stone, taupe, restrained chrome and warm indirect lighting. Realistic 2.4m apartment ceiling, practical proportions, subtle material imperfections, perfectly vertical architectural lines, 28mm lens, natural daylight balanced with 3000K lighting, no orange color cast. No people, logos, text, watermarks or CGI sheen. Subject: premium kitchen main shot from dining area, entire island visible with floor around it. Wide 3/4 view: long central island with finely veined warm greige matte porcelain slab worktop and waterfall end, smoked light oak veneer vertical front panels. Back wall warm off-white handleless matte cabinets, a long greige stone backsplash lit softly underneath upper cabinets, integrated tall refrigerator to left, slim polished chrome kitchen mixer and undermount stainless sink on back counter, discreet black induction hob. Light natural oak plank floor. Daylight enters from right. Two subtle oat upholstered stools and one small ceramic bowl only. Clear readable material zones: island stone, oak island front, cabinet fronts, metal faucet, floor. Restrained achievable Korean apartment renovation, publication quality.",
+    "points": [
+      {
+        "number": "01",
+        "x": 61,
+        "y": 51,
+        "group": "상판",
+        "name": "웜 그레이지 포세린 슬랩",
+        "summary": "아일랜드 상판과 측판을 같은 돌결로 이어 덩어리감을 만드는 제안입니다.",
+        "combination": "무광 석재무늬 슬랩 · 같은 계열 벽체 패널",
+        "reason": "욕실의 돌결을 주방의 주인공 소재로 반복합니다.",
+        "check": "제품별 상판 사용 적합성, 지지 간격, 접합부와 모서리 상세를 제작업체와 확인합니다.",
+        "palette": [
+          "#ac9980",
+          "#cfc7b9",
+          "#8b7154"
+        ]
+      },
+      {
+        "number": "02",
+        "x": 49,
+        "y": 72,
+        "group": "가구",
+        "name": "스모크 오크 무늬목",
+        "summary": "아일랜드 전면에 세로결을 사용해 넓은 석재 면을 따뜻하게 받칩니다.",
+        "combination": "오크 무늬목 + 저광택 보호 마감",
+        "reason": "같은 오크 계열을 거실 수납장과 연결하면 공간 사이의 색 차이를 줄일 수 있습니다.",
+        "check": "물 닿는 하단의 마감, 무늬목 로트 차이, 샘플의 착색 정도를 확인합니다.",
+        "palette": [
+          "#ac9980",
+          "#cfc7b9",
+          "#8b7154"
+        ]
+      },
+      {
+        "number": "03",
+        "x": 48,
+        "y": 20,
+        "group": "도어",
+        "name": "웜 그레이지 무광 가구 도어",
+        "summary": "벽처럼 정돈된 수납 면을 만드는 손잡이 없는 도어 제안입니다.",
+        "combination": "무광 PET 또는 도장 도어 · 균일한 문 간격",
+        "reason": "상판보다 무늬가 적은 배경으로 사용해 주방이 복잡해 보이지 않게 합니다.",
+        "check": "PET와 도장의 실물 광택·지문·모서리를 비교하고 냉장고 환기 간격을 확인합니다.",
+        "palette": [
+          "#ac9980",
+          "#cfc7b9",
+          "#8b7154"
+        ]
+      },
+      {
+        "number": "04",
+        "x": 40,
+        "y": 38,
+        "group": "수전",
+        "name": "크롬 수전 + 언더마운트 싱크",
+        "summary": "욕실의 크롬 포인트를 주방에 작게 반복합니다.",
+        "combination": "곡선형 크롬 수전 · 스테인리스 싱크",
+        "reason": "무광 돌과 나무 사이에 작은 반사 포인트를 줍니다.",
+        "check": "출수 위치, 싱크 깊이, 창문·상부장 간섭과 수리 접근성을 확인합니다.",
+        "palette": [
+          "#ac9980",
+          "#cfc7b9",
+          "#8b7154"
+        ]
+      },
+      {
+        "number": "05",
+        "x": 16,
+        "y": 85,
+        "group": "바닥",
+        "name": "내추럴 오크 톤 마루",
+        "summary": "거실까지 같은 톤의 바닥을 이어 공간의 흐름을 만드는 제안입니다.",
+        "combination": "오크 톤 강마루 또는 원목마루 샘플 비교",
+        "reason": "차가워 보일 수 있는 석재를 바닥의 나뭇결로 보완합니다.",
+        "check": "난방 적합성, 물 사용 구역의 관리 조건, 기존 바닥 높이를 확인합니다.",
+        "palette": [
+          "#ac9980",
+          "#cfc7b9",
+          "#8b7154"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "living",
+    "label": "거실 아트월",
+    "en": "LIVING · A CUT",
+    "title": "린넨 질감 도배로 부드러워진 거실",
+    "image": "projects-assets/concepts/concept-living-lx-pr056-01.webp",
+    "formula": "LX 디아망 PR056-01 샌드그레이 + 낮은 오크 수납장 + 아이보리 패브릭",
+    "prompt": "Use case: precise-object-edit. Image 1 is the edit target living room. Image 2 is the official LX Z:IN DIAMANT linen canvas sand grey PR056-01 wallpaper swatch, a close-up MATERIAL REFERENCE ONLY. Change ONLY the large TV wall including below the console to approximate this exact reference's very light sand-grey/ivory warm-neutral base and fine dense irregular woven crosshatched linen texture. The swatch is a macro: scale its thread grain down to believable real wallpaper fine emboss, never giant coarse fabric or repeated obvious squares. The resulting wall should be LIGHTER, LESS BROWN than target, close to sample neutral base; warm 3000K cove light only warms top edge, daylight provides soft neutral fill. No stone veins, no tile seams, no plaster swirls. Preserve all furniture, geometry, camera, TV, oak console, vertical oak trim, curtains, rug, objects, shadows outside wall. Landscape 3:2 photorealistic architectural photograph. No text or watermark. This is illustrative AI material simulation, not a calibrated product photograph.",
+    "points": [
+      {
+        "number": "01",
+        "x": 78,
+        "y": 31,
+        "group": "아트월",
+        "name": "LX 디아망 린넨 캔버스 / 샌드그레이",
+        "code": "PR056-01",
+        "source": "https://www.lxzin.com/zin/product/102579",
+        "summary": "공식 제품 샘플을 참고해 밝은 모래빛 바탕과 촘촘한 직물 결을 표현한 AI 적용 예시입니다.",
+        "combination": "제품코드 PR056-01 · 공식 규격 106cm × 15.6m",
+        "reason": "오크의 따뜻한 색을 살리면서 기존 돌무늬보다 잔잔하고 밝은 배경을 만드는 조합으로 제안합니다.",
+        "check": "이미지는 색상 보증용이 아닙니다. 실물 원장 샘플로 색·질감, 낮과 밤 조명, 도배 이음매를 확인하고 공급 여부를 상담합니다.",
+        "palette": [
+          "#ac9980",
+          "#cfc7b9",
+          "#8b7154"
+        ]
+      },
+      {
+        "number": "02",
+        "x": 64,
+        "y": 65,
+        "group": "수납장",
+        "name": "오크 무늬목 벽걸이 수납장",
+        "summary": "낮고 긴 수평선으로 잔잔한 도배 벽면에 중심을 잡아줍니다.",
+        "combination": "주방 하부장과 같은 오크 색 · 저광택 마감",
+        "reason": "바닥을 일부 드러내 넓은 아트월이 답답해 보이지 않게 합니다.",
+        "check": "벽체 보강, 수납 하중, 로봇청소기 높이와 전선 정리를 확인합니다.",
+        "palette": [
+          "#ac9980",
+          "#cfc7b9",
+          "#8b7154"
+        ]
+      },
+      {
+        "number": "03",
+        "x": 88,
+        "y": 87,
+        "group": "바닥",
+        "name": "내추럴 오크 톤 마루",
+        "summary": "주방과 같은 바닥 재료를 이어 하나의 생활 공간으로 묶습니다.",
+        "combination": "긴 판형 마루 · 낮은 광택",
+        "reason": "벽지의 잔잔한 결과 바닥의 나뭇결이 자연스럽게 어우러집니다.",
+        "check": "시공 방향, 문턱 단차, 난방 적합성과 변색 관리 조건을 확인합니다.",
+        "palette": [
+          "#ac9980",
+          "#cfc7b9",
+          "#8b7154"
+        ]
+      },
+      {
+        "number": "04",
+        "x": 15,
+        "y": 35,
+        "group": "커튼",
+        "name": "아이보리 쉬어 커튼",
+        "summary": "창의 빛을 부드럽게 걸러 벽지와 나뭇결을 편안하게 보이게 합니다.",
+        "combination": "쉬어 원단 + 필요 시 별도 암막 겹",
+        "reason": "큰 창과 아트월 사이에 부드러운 질감을 넣습니다.",
+        "check": "실물 원단의 비침, 세탁 수축률, 커튼박스 폭과 창문 간섭을 확인합니다.",
+        "palette": [
+          "#ac9980",
+          "#cfc7b9",
+          "#8b7154"
+        ]
+      },
+      {
+        "number": "05",
+        "x": 57,
+        "y": 14,
+        "group": "조명",
+        "name": "아트월 상부 간접조명",
+        "summary": "벽면 위쪽에서 내려오는 빛으로 벽지의 잔잔한 질감을 살리는 제안입니다.",
+        "combination": "3000K 전후 선형 조명 · 눈부심 차폐",
+        "reason": "주방과 욕실의 따뜻한 간접광을 거실에도 이어줍니다.",
+        "check": "사광에서 도배 이음매와 바탕면 요철이 두드러지지 않도록 실물 샘플에 조명을 비춰봅니다.",
+        "palette": [
+          "#ac9980",
+          "#cfc7b9",
+          "#8b7154"
+        ]
+      }
+    ]
+  },
+  {
+    "key": "entry",
+    "label": "현관",
+    "en": "ENTRANCE · A CUT",
+    "title": "집의 첫인상을 잇는 작은 현관",
+    "formula": "그레이지 바닥 타일 + 무광 신발장 + 오크 니치와 거울",
+    "prompt": "Use case: photorealistic-natural. Create one single landscape 3:2 architectural editorial A-cut photograph, not collage. Reference image is ONLY a material and mood reference; create a different room of the same envisioned Korean apartment. Match its warm greige limestone-look stone, taupe, restrained chrome and warm indirect lighting. Realistic 2.4m apartment ceiling, practical proportions, subtle material imperfections, perfectly vertical architectural lines, 28mm lens, natural daylight balanced with 3000K lighting, no orange color cast. No people, logos, text, watermarks or CGI sheen. Subject: Korean apartment entrance foyer A-cut viewed from interior toward entry zone, three-quarter view, compact realistic 2.2m wide foyer. Matte greige stone-look porcelain tile floor lowered slightly from natural oak plank interior floor visible at foreground threshold. Full-height warm off-white matte shoe cupboards on left, suspended 150mm above floor with soft concealed toe light. Center-right smoked light oak veneer recessed niche with simple integrated floating oak bench, large clear mirror above it reflecting plausible opposite wall, and a soft light under niche top. Dark taupe flush entrance door at far right with modest chrome handle. Minimal practical contemporary details. Clear material zones: tile floor, warm off-white cabinet doors, oak bench/niche, mirror, low indirect lighting. Soft daylight from interior behind camera, clean quiet architectural composition, no shoes or clutter, no hotel corridor, no exaggerated arches.",
+    "points": [
+      {
+        "number": "01",
+        "x": 68,
+        "y": 84,
+        "group": "바닥",
+        "name": "그레이지 석재무늬 포세린",
+        "summary": "욕실과 같은 색 계열의 바닥으로 집 전체의 첫 인상을 맞춥니다.",
+        "combination": "무광 타일 · 유사색 줄눈 · 마루 경계 마감",
+        "reason": "바깥에서 들어오는 영역과 생활 공간을 재료로 구분합니다.",
+        "check": "젖은 신발의 미끄럼, 문 열림 높이, 현관 단차와 경계 상세를 확인합니다.",
+        "palette": [
+          "#ac9980",
+          "#cfc7b9",
+          "#8b7154"
+        ]
+      },
+      {
+        "number": "02",
+        "x": 29,
+        "y": 34,
+        "group": "신발장",
+        "name": "웜 뉴트럴 무광 신발장",
+        "summary": "주방 도어와 유사한 색으로 벽처럼 정돈된 수납 면을 제안합니다.",
+        "combination": "무광 도어 · 숨은 손잡이 · 띄운 하부",
+        "reason": "현관에서 주방으로 이어질 때 가구색이 갑자기 바뀌지 않게 합니다.",
+        "check": "신발 깊이, 환기, 하부 청소 여유와 문 간섭을 확인합니다.",
+        "palette": [
+          "#ac9980",
+          "#cfc7b9",
+          "#8b7154"
+        ]
+      },
+      {
+        "number": "03",
+        "x": 51,
+        "y": 60,
+        "group": "니치",
+        "name": "오크 무늬목 니치와 벤치",
+        "summary": "거울 아래 작은 오크 면으로 차분한 현관에 온기를 더합니다.",
+        "combination": "오크 세로결 벽체 · 같은 색 벤치",
+        "reason": "주방 아일랜드와 거실 수납장의 나뭇결을 짧게 반복합니다.",
+        "check": "실제 착석 용도라면 벤치 높이·깊이·지지 구조를 따로 설계해야 합니다.",
+        "palette": [
+          "#ac9980",
+          "#cfc7b9",
+          "#8b7154"
+        ]
+      },
+      {
+        "number": "04",
+        "x": 48,
+        "y": 32,
+        "group": "거울",
+        "name": "클리어 거울",
+        "summary": "외출 전 확인과 좁은 공간의 시각적 확장을 위한 제안입니다.",
+        "combination": "색 왜곡이 적은 거울 · 정돈된 가장자리",
+        "reason": "브론즈 색을 더하기보다 목재와 타일 본래의 색을 유지합니다.",
+        "check": "안전 부착 방식, 끝단 마감, 문 반사와 눈부심을 확인합니다.",
+        "palette": [
+          "#ac9980",
+          "#cfc7b9",
+          "#8b7154"
+        ]
+      },
+      {
+        "number": "05",
+        "x": 28,
+        "y": 81,
+        "group": "조명",
+        "name": "신발장 하부 간접조명",
+        "summary": "발밑의 여백을 밝혀 수납장이 가볍게 보이도록 합니다.",
+        "combination": "3000K 전후 · 광원 가림 · 센서 연동 검토",
+        "reason": "상부 니치 조명과 같은 색온도를 사용해 톤을 통일합니다.",
+        "check": "전원장치 교체 접근성, 센서 위치와 하부 청소 간섭을 확인합니다.",
+        "palette": [
+          "#ac9980",
+          "#cfc7b9",
+          "#8b7154"
+        ]
+      }
+    ]
+  }
+];
+
