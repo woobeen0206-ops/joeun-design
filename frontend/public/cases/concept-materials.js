@@ -69,7 +69,6 @@ const bathroom = {
   key: "bathroom", label: "욕실", en: "BATHROOM · A CUT",
   title: "차분한 돌결과 따뜻한 빛",
   formula: "웜 그레이지 타일 + 백색 도기 + 크롬 + 간접조명",
-  prompt: document.querySelector("#promptText").textContent,
   points: Object.values(materials).map((material, index) => ({
     ...material, x: [80, 43, 37, 48, 29][index], y: [28, 92, 48, 25, 40][index]
   }))
@@ -108,8 +107,6 @@ function selectRoom(key) {
   document.querySelector("#concept-title").textContent = selectedRoom.title;
   document.querySelector("#room-eyebrow").textContent = selectedRoom.en;
   document.querySelector("#room-formula").textContent = selectedRoom.formula;
-  document.querySelector("#promptText").textContent = selectedRoom.prompt;
-  document.querySelector("#prompt-title").textContent = selectedRoom.label + " · 실사 제작 프롬프트";
   document.querySelectorAll("[data-room]").forEach((button) => {
     button.setAttribute("aria-pressed", String(button.dataset.room === key));
   });
@@ -140,20 +137,3 @@ document.querySelectorAll("[data-room]").forEach((button) => {
   button.addEventListener("click", () => selectRoom(button.dataset.room));
 });
 selectRoom("kitchen");
-
-const copyButton = document.querySelector("#copyPrompt");
-const promptText = document.querySelector("#promptText");
-
-copyButton.addEventListener("click", async () => {
-  try {
-    await navigator.clipboard.writeText(promptText.textContent.trim());
-    copyButton.textContent = "복사됨";
-    copyButton.classList.add("is-copied");
-    window.setTimeout(() => {
-      copyButton.textContent = "프롬프트 복사";
-      copyButton.classList.remove("is-copied");
-    }, 1600);
-  } catch {
-    copyButton.textContent = "직접 선택해 복사해주세요";
-  }
-});

@@ -6,7 +6,6 @@ window.conceptRooms = [
     "en": "KITCHEN · A CUT",
     "title": "돌과 오크로 완성한 주방",
     "formula": "그레이지 스톤 상판 + 스모크 오크 하부 + 웜 뉴트럴 무광 도어",
-    "prompt": "Use case: photorealistic-natural. Create one single landscape 3:2 architectural editorial A-cut photograph, not collage. Reference image is ONLY a material and mood reference; create a different room of the same envisioned Korean apartment. Match its warm greige limestone-look stone, taupe, restrained chrome and warm indirect lighting. Realistic 2.4m apartment ceiling, practical proportions, subtle material imperfections, perfectly vertical architectural lines, 28mm lens, natural daylight balanced with 3000K lighting, no orange color cast. No people, logos, text, watermarks or CGI sheen. Subject: premium kitchen main shot from dining area, entire island visible with floor around it. Wide 3/4 view: long central island with finely veined warm greige matte porcelain slab worktop and waterfall end, smoked light oak veneer vertical front panels. Back wall warm off-white handleless matte cabinets, a long greige stone backsplash lit softly underneath upper cabinets, integrated tall refrigerator to left, slim polished chrome kitchen mixer and undermount stainless sink on back counter, discreet black induction hob. Light natural oak plank floor. Daylight enters from right. Two subtle oat upholstered stools and one small ceramic bowl only. Clear readable material zones: island stone, oak island front, cabinet fronts, metal faucet, floor. Restrained achievable Korean apartment renovation, publication quality.",
     "points": [
       {
         "number": "01",
@@ -97,7 +96,6 @@ window.conceptRooms = [
     "title": "린넨 질감 도배로 부드러워진 거실",
     "image": "projects-assets/concepts/concept-living-lx-pr056-01.webp",
     "formula": "LX 디아망 PR056-01 샌드그레이 + 낮은 오크 수납장 + 아이보리 패브릭",
-    "prompt": "Use case: precise-object-edit. Image 1 is the edit target living room. Image 2 is the official LX Z:IN DIAMANT linen canvas sand grey PR056-01 wallpaper swatch, a close-up MATERIAL REFERENCE ONLY. Change ONLY the large TV wall including below the console to approximate this exact reference's very light sand-grey/ivory warm-neutral base and fine dense irregular woven crosshatched linen texture. The swatch is a macro: scale its thread grain down to believable real wallpaper fine emboss, never giant coarse fabric or repeated obvious squares. The resulting wall should be LIGHTER, LESS BROWN than target, close to sample neutral base; warm 3000K cove light only warms top edge, daylight provides soft neutral fill. No stone veins, no tile seams, no plaster swirls. Preserve all furniture, geometry, camera, TV, oak console, vertical oak trim, curtains, rug, objects, shadows outside wall. Landscape 3:2 photorealistic architectural photograph. No text or watermark. This is illustrative AI material simulation, not a calibrated product photograph.",
     "points": [
       {
         "number": "01",
@@ -189,7 +187,6 @@ window.conceptRooms = [
     "en": "ENTRANCE · A CUT",
     "title": "집의 첫인상을 잇는 작은 현관",
     "formula": "그레이지 바닥 타일 + 무광 신발장 + 오크 니치와 거울",
-    "prompt": "Use case: photorealistic-natural. Create one single landscape 3:2 architectural editorial A-cut photograph, not collage. Reference image is ONLY a material and mood reference; create a different room of the same envisioned Korean apartment. Match its warm greige limestone-look stone, taupe, restrained chrome and warm indirect lighting. Realistic 2.4m apartment ceiling, practical proportions, subtle material imperfections, perfectly vertical architectural lines, 28mm lens, natural daylight balanced with 3000K lighting, no orange color cast. No people, logos, text, watermarks or CGI sheen. Subject: Korean apartment entrance foyer A-cut viewed from interior toward entry zone, three-quarter view, compact realistic 2.2m wide foyer. Matte greige stone-look porcelain tile floor lowered slightly from natural oak plank interior floor visible at foreground threshold. Full-height warm off-white matte shoe cupboards on left, suspended 150mm above floor with soft concealed toe light. Center-right smoked light oak veneer recessed niche with simple integrated floating oak bench, large clear mirror above it reflecting plausible opposite wall, and a soft light under niche top. Dark taupe flush entrance door at far right with modest chrome handle. Minimal practical contemporary details. Clear material zones: tile floor, warm off-white cabinet doors, oak bench/niche, mirror, low indirect lighting. Soft daylight from interior behind camera, clean quiet architectural composition, no shoes or clutter, no hotel corridor, no exaggerated arches.",
     "points": [
       {
         "number": "01",

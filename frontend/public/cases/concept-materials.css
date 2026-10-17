@@ -124,32 +124,15 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .palette { display: flex; margin-top: 28px; gap: 10px; }
 .palette span { display: block; width: 28px; height: 28px; border: 1px solid rgb(37 55 47 / 15%); border-radius: 50%; background: var(--swatch); }
 
-.formula, .research, .prompt-section { padding-block: clamp(80px, 10vw, 150px); border-top: 1px solid var(--line); }
+.formula { padding-block: clamp(80px, 10vw, 150px); border-top: 1px solid var(--line); }
 .formula-list { margin: 60px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--ink); }
 .formula-list li { display: grid; padding: 27px 0; grid-template-columns: 100px minmax(180px, .65fr) 1fr; gap: 25px; border-bottom: 1px solid var(--line); align-items: baseline; }
 .formula-list li > span { color: #9b8469; font: italic 1rem Georgia, serif; }
 .formula-list strong { font-size: 1.1rem; font-weight: 520; }
 .formula-list p { margin: 0; color: var(--muted); font-size: .82rem; line-height: 1.8; }
 
-.research { background: #273a31; color: #f2efe7; box-shadow: 0 0 0 100vmax #273a31; clip-path: inset(0 -100vmax); }
-.research .eyebrow { color: #baa889; }
-.research .section-head > p { color: #bdc6bf; }
-.research-layout { display: grid; margin-top: 70px; grid-template-columns: .75fr 1.25fr; gap: clamp(50px, 9vw, 140px); }
-.research-lead { font: 400 clamp(1.25rem, 2vw, 2rem)/1.7 Georgia, "Times New Roman", serif; }
-.research-lead p { margin: 0 0 25px; }
-.research-lead strong { color: #d9c7a7; font-weight: 400; }
-.source-list { border-top: 1px solid #64736b; }
-.source-list article { padding: 25px 0; border-bottom: 1px solid #64736b; }
-.source-list article > span { color: #b7aa91; font-size: .66rem; letter-spacing: .1em; }
-.source-list h3 { margin: 8px 0; font-size: 1rem; font-weight: 520; }
-.source-list p { margin: 0; color: #bec7c0; font-size: .78rem; line-height: 1.75; }
-.source-list a { display: inline-block; margin-top: 15px; padding-bottom: 3px; border-bottom: 1px solid #89968e; font-size: .72rem; }
-
-.copy-button { padding: 11px 17px; border: 1px solid var(--ink); background: transparent; cursor: pointer; font-size: .75rem; }
 .material-source { font-size:.78rem; text-decoration:underline; text-underline-offset:5px; margin-bottom:24px; }
 [hidden] { display:none!important; }
-.copy-button.is-copied { color: white; background: var(--ink); }
-.prompt-section pre { margin: 48px 0 0; padding: clamp(25px, 4vw, 52px); overflow-x: auto; border: 1px solid var(--line); background: #eeeae0; white-space: pre-wrap; color: #4f554f; font: .83rem/2 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; word-break: keep-all; }
 
 .site-footer { display: flex; padding-block: 28px; justify-content: space-between; gap: 30px; border-top: 1px solid var(--line); color: var(--muted); font-size: .68rem; }
 
@@ -160,7 +143,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .concept-figure { aspect-ratio: 16 / 10; }
   .material-panel { min-height: 540px; }
   .material-group { margin-top: 70px; }
-  .research-layout { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 620px) {
@@ -182,10 +164,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .formula-list { margin-top: 40px; }
   .formula-list li { grid-template-columns: 48px 1fr; gap: 12px 18px; }
   .formula-list p { grid-column: 2; }
-  .research-layout { margin-top: 45px; gap: 35px; }
-  .prompt-section .section-head { display: flex; align-items: end; }
-  .copy-button { flex: none; }
-  .prompt-section pre { margin-top: 30px; font-size: .76rem; line-height: 1.9; }
   .site-footer { display: block; }
 }
 
