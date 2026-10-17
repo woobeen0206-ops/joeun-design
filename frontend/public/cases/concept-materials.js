@@ -83,7 +83,7 @@ function selectMaterial(index) {
   sourceLink.hidden = !material.source;
   if (material.source) sourceLink.href = material.source;
   else sourceLink.removeAttribute("href");
-  document.querySelector("#material-status").textContent = material.code ? "공식 품번 확인 · AI 적용 예시" : "좋은디자인 제안 사양";
+  document.querySelector("#material-status").textContent = material.code ? "공식 품번 확인 · AI 적용 예시" : "조은 디자인 제안 사양";
   document.querySelectorAll("[data-point]").forEach((button) => {
     const active = Number(button.dataset.point) === index;
     button.classList.toggle("is-active", active);

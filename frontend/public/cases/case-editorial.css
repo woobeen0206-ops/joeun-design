@@ -17,12 +17,16 @@
 .case-tabs .project-card .project-card-media { aspect-ratio:3/2; }
 .project-card-copy { display:block; padding-top:12px; }
 .project-card-copy small { display:block; margin-top:6px; }
-.selected-project { margin-top:72px; padding-top:36px; }
-.project-heading { grid-template-columns:1fr; gap:14px; }
-.project-heading h3 { font-size:clamp(1.9rem,3.5vw,3.3rem); line-height:1.25; }
-.project-heading p { text-align:left; }
+.work-section { padding-top:0; }
+.selected-project { margin-top:0; padding-top:0; }
+.selected-project > .project-heading { position:absolute; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+.selected-project .case-viewer { margin-top:0; }
+.case-detail-intro { margin-top:clamp(72px,9vw,132px); }
 .space-filters button { border-radius:0; min-height:44px; }
-#caseGallery { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px; margin-top:28px; }
+.case-photo-guide { display:flex; align-items:baseline; justify-content:space-between; gap:24px; margin:42px 0 14px; padding-top:18px; border-top:1px solid var(--line); }
+.case-photo-guide span { color:var(--ink); font-size:.82rem; font-weight:650; }
+.case-photo-guide p { margin:0; color:var(--soft); font-size:.75rem; }
+#caseGallery { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px; margin-top:20px; }
 #caseGallery figure,#caseGallery figure:nth-child(n) { grid-column:auto; min-width:0; }
 #caseGallery .photo-button { height:100%; padding-bottom:12px; border-bottom:2px solid var(--line); }
 #caseGallery .photo-button[aria-pressed=true] { border-color:var(--ink); }
@@ -45,12 +49,16 @@
 .case-viewer-controls { display:flex; justify-content:space-between; gap:12px; margin-top:24px; }
 .case-viewer-controls button { min-height:44px; padding:10px 16px; border:1px solid #9b9a8c; background:transparent; font-size:.8rem; }
 .case-viewer-controls button:hover { background:#25372f; color:#fff; }
+.case-index { margin-top:clamp(92px,12vw,170px); padding-top:clamp(74px,9vw,128px); border-top:1px solid var(--line); }
+.case-index .section-heading { max-width:780px; }
+.case-index .case-tabs { margin-bottom:0; }
 @media(max-width:1000px) { .case-viewer { grid-template-columns:1fr; } .case-viewer-photo img { max-height:640px; } }
 @media(max-width:640px) {
   .case-tabs { grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px 14px; }
   .project-card-copy strong { font-size:.85rem; }
   .project-card-copy small { font-size:.65rem; }
-  .selected-project { margin-top:54px; }
+  .case-photo-guide { display:block; margin-top:34px; }
+  .case-photo-guide p { margin-top:6px; }
   #caseGallery { grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px 12px; }
   .case-viewer-copy { padding:24px; }
   .case-viewer-category { margin-top:24px; }

@@ -225,33 +225,46 @@ img{display:block;width:100%;object-fit:cover}:focus-visible{outline:3px solid #
     </div>
   </section>
 
-  <nav class="shortcut-bar" aria-label="빠른 메뉴">
-    <a href="#projects"><img src="projects-assets/case01-01-kitchen.jpg" alt="" /><span>시공 사례</span></a>
-    <a href="#onsite"><img src="projects-assets/onsite-05-tile.jpg" alt="" /><span>시공 과정</span></a>
-    <a href="concept-materials.html"><img src="projects-assets/concepts/concept-living-lx-pr056-01.webp" alt="" /><span>컨셉 · 자재</span></a>
-    <a href="joeun-design-estimate.html"><span class="shortcut-icon">↗</span><span>무료 견적 준비</span></a>
-  </nav>
-
   <section class="page-wrap work-section" id="projects">
-    <div class="section-heading">
-      <div>
-        <p class="eyebrow">Selected projects</p>
-        <h2>실제로 완성한 공간을<br />먼저 보여드립니다.</h2>
-      </div>
-      <p>조은 디자인이 직접 시공하고 촬영한 공간입니다.</p>
-    </div>
-
-    <div class="case-tabs" id="caseTabs" role="tablist" aria-label="시공 사례 선택"></div>
-
     <div class="selected-project" id="selectedProject">
       <div id="caseHeading" class="project-heading"></div>
+      <div id="caseViewer" class="case-viewer" aria-label="선택한 공간 상세"></div>
+
+      <div class="section-heading case-detail-intro">
+        <div>
+          <p class="eyebrow">Completed space · 01</p>
+          <h2>완성된 공간을<br />먼저 살펴보세요.</h2>
+        </div>
+        <p>큰 사진과 함께 공간별 시공 범위, 상담 시 확인할 부분, 자재 안내를 한 화면에서 확인할 수 있습니다.</p>
+      </div>
+      <div class="case-photo-guide">
+        <span>다른 공간 사진</span>
+        <p>사진을 선택하면 위 상세 화면이 바뀝니다.</p>
+      </div>
       <div id="spaceFilters" class="space-filters" aria-label="공간별 사진 보기"></div>
       <div id="caseGallery" class="gallery-grid"></div>
-      <div id="caseViewer" class="case-viewer" aria-label="선택한 공간 상세"></div>
       <p id="galleryStatus" class="visually-hidden" aria-live="polite"></p>
       <div id="caseCompare"></div>
     </div>
+
+    <section class="case-index" aria-labelledby="case-index-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Completed projects</p>
+          <h2 id="case-index-title">실제로 완성한<br />공간을 모아봤습니다.</h2>
+        </div>
+        <p>조은 디자인이 직접 시공하고 촬영한 공간입니다. 사례를 선택하면 위에서 사진과 공간 정보를 자세히 볼 수 있습니다.</p>
+      </div>
+      <div class="case-tabs" id="caseTabs" role="tablist" aria-label="완성 시공 사례 선택"></div>
+    </section>
   </section>
+
+  <nav class="shortcut-bar" aria-label="빠른 메뉴">
+    <a href="#projects"><img src="projects-assets/case01-01-kitchen.jpg" alt="" /><span>시공 사례</span></a>
+    <a href="concept-materials.html"><img src="projects-assets/concepts/concept-living-lx-pr056-01.webp" alt="" /><span>컨셉 · 자재</span></a>
+    <a href="#onsite"><img src="projects-assets/onsite-05-tile.jpg" alt="" /><span>시공 과정</span></a>
+    <a href="joeun-design-estimate.html"><span class="shortcut-icon">↗</span><span>무료 견적 준비</span></a>
+  </nav>
 
   <section class="page-wrap concept-entry" aria-labelledby="concept-entry-title">
     <a class="concept-entry-image" href="concept-materials.html" aria-label="컨셉 사진과 자재 가이드 보기">
