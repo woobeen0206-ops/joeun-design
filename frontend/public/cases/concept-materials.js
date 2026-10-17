@@ -104,9 +104,6 @@ function selectRoom(key) {
   selectedRoom = rooms.find((room) => room.key === key);
   roomImage.src = selectedRoom.image || ("projects-assets/concepts/concept-" + key + "-greige-01." + (key === "bathroom" ? "jpg" : "webp"));
   roomImage.alt = "AI 컨셉 · " + selectedRoom.label + " · 실제 시공 사진 아님";
-  document.querySelector("#concept-title").textContent = selectedRoom.title;
-  document.querySelector("#room-eyebrow").textContent = selectedRoom.en;
-  document.querySelector("#room-formula").textContent = selectedRoom.formula;
   document.querySelectorAll("[data-room]").forEach((button) => {
     button.setAttribute("aria-pressed", String(button.dataset.room === key));
   });
