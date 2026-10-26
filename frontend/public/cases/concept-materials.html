@@ -27,6 +27,35 @@
       </div>
     </section>
 
+    <section class="tone-guide shell" aria-labelledby="tone-guide-title">
+      <div class="tone-guide-head">
+        <div>
+          <p class="eyebrow">MOOD DIRECTION</p>
+          <h2 id="tone-guide-title">우리 집에 어울리는<br />분위기부터 골라보세요.</h2>
+        </div>
+        <p>같은 평면도도 색과 소재에 따라 전혀 다른 인상이 됩니다. 아래 이미지는 상담을 위한 컨셉 제안이며, 실제 자재와 시공 결과는 현장 여건과 실물 샘플을 기준으로 결정합니다.</p>
+      </div>
+
+      <div class="tone-grid">
+        <button class="tone-card" type="button" data-tone="clean-white" aria-pressed="true">
+          <div class="tone-image"><img src="projects-assets/concept-tones/clean-white-kitchen.jpg" alt="밝은 화이트 주방 컨셉 이미지" width="1280" height="853" loading="lazy" /><span>CONCEPT IMAGE</span></div>
+          <div class="tone-copy"><p>01 · CLEAN WHITE</p><h3>클린 화이트</h3><p>밝은 무광 면과 라이트 오크로 넓고 정돈된 인상을 만드는 톤</p></div>
+        </button>
+        <button class="tone-card" type="button" data-tone="dark-walnut" aria-pressed="false">
+          <div class="tone-image"><img src="projects-assets/concept-tones/dark-walnut-living.jpg" alt="다크 월넛 거실 컨셉 이미지" width="1280" height="853" loading="lazy" /><span>CONCEPT IMAGE</span></div>
+          <div class="tone-copy"><p>02 · DARK WALNUT</p><h3>다크 월넛</h3><p>깊은 나뭇결과 부드러운 석재가 만나는 차분하고 밀도 있는 톤</p></div>
+        </button>
+        <button class="tone-card" type="button" data-tone="charcoal" aria-pressed="false">
+          <div class="tone-image"><img src="projects-assets/concept-tones/charcoal-kitchen.jpg" alt="차콜 그레이 주방 컨셉 이미지" width="1280" height="853" loading="lazy" /><span>CONCEPT IMAGE</span></div>
+          <div class="tone-copy"><p>03 · CHARCOAL GRAY</p><h3>차콜 그레이</h3><p>무광 그레이와 금속 질감으로 선명하고 절제된 인상을 만드는 톤</p></div>
+        </button>
+        <button class="tone-card" type="button" data-tone="natural-ivory" aria-pressed="false">
+          <div class="tone-image"><img src="projects-assets/concept-tones/natural-ivory-living.jpg" alt="내추럴 아이보리 거실 컨셉 이미지" width="1280" height="853" loading="lazy" /><span>CONCEPT IMAGE</span></div>
+          <div class="tone-copy"><p>04 · NATURAL IVORY</p><h3>내추럴 아이보리</h3><p>오프화이트와 편안한 우드, 직물의 질감을 담은 부드러운 생활 톤</p></div>
+        </button>
+      </div>
+    </section>
+
     <section class="explorer shell" aria-label="공간별 컨셉 자재">
       <nav class="room-picker" aria-label="공간별 A컷">
         <button type="button" data-room="kitchen" aria-pressed="false"><img src="projects-assets/concepts/concept-kitchen-greige-01.webp" alt="" width="1536" height="1024" /><span>01 · 주방 메인</span></button>
@@ -35,7 +64,8 @@
         <button type="button" data-room="bathroom" aria-pressed="true"><img src="projects-assets/concepts/concept-bathroom-greige-01.jpg" alt="" width="1920" height="1280" /><span>04 · 욕실</span></button>
       </nav>
       <div class="explorer-notes">
-        <p class="explorer-note">사진의 번호를 누르면 해당 위치의 자재 구성과 선택 이유를 확인할 수 있습니다.</p>
+        <p class="explorer-note" id="tone-summary">클린 화이트 · 밝은 무광 면과 라이트 오크로 실제 생활 공간의 답답함을 덜어내는 톤입니다.</p>
+        <p class="spec-note" id="tone-range">현실 적용 기준 · 28평형 · 방 3 · 욕실 2</p>
       </div>
 
       <div class="explorer-grid">
@@ -96,7 +126,7 @@
     <p>조은 디자인 · 컨셉 자재 가이드 검토본</p>
   </footer>
 
-  <script src="concept-rooms.js"></script>
-  <script src="concept-materials.js?v=20261017.6"></script>
+  <script src="concept-tones.js"></script>
+  <script src="concept-materials.js?v=20261026.1"></script>
 </body>
 </html>

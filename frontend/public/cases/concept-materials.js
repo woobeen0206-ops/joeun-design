@@ -1,136 +1,46 @@
-const materials = {
-  wall: {
-    number: "01",
-    group: "WALL FINISH",
-    name: "웜 그레이지 대형 포세린 타일",
-    summary: "잔잔한 돌결을 넓게 이어 욕실이 작아 보이지 않게 만드는 기본 마감입니다.",
-    combination: "무광 600×1200급 · 웜 그레이 줄눈",
-    reason: "무늬 반복과 줄눈을 줄여 차분하고 정돈된 인상을 만듭니다.",
-    check: "실물 샘플의 바탕색, 무늬 연결, 모서리 마감 방식을 먼저 확인합니다.",
-    palette: ["#a89478", "#d9d1c4", "#6f6254"]
-  },
-  floor: {
-    number: "02",
-    group: "FLOOR FINISH",
-    name: "딥 토프 논슬립 포세린 타일",
-    summary: "벽보다 한 톤 진한 바닥으로 공간의 무게를 잡고 오염이 도드라지지 않게 합니다.",
-    combination: "무광 논슬립 표면 · 동일 계열 줄눈 · 사각 배수구",
-    reason: "벽과 바닥의 명도 차가 경계를 만들면서도 색 계열은 이어져 넓어 보입니다.",
-    check: "젖은 상태의 미끄럼 성능과 물매, 배수구 주변 절단 계획을 함께 확인합니다.",
-    palette: ["#6f665c", "#918577", "#bab0a3"]
-  },
-  faucet: {
-    number: "03",
-    group: "METAL & BASIN",
-    name: "폴리시드 크롬 수전 + 백색 도기",
-    summary: "색을 더하기보다 선명한 크롬 반사와 백색 도기로 작은 공간에 깨끗한 초점을 둡니다.",
-    combination: "슬림 싱글레버 수전 · 직선형 벽부 세면기",
-    reason: "크롬은 구하기 쉽고 관리가 익숙하며, 따뜻한 타일과 대비되어 답답함을 줄입니다.",
-    check: "수전 출수 길이와 세면기 깊이, 하부 배관 노출 여부를 도면에서 맞춥니다.",
-    palette: ["#e5e4df", "#aaa8a2", "#f7f5ef"]
-  },
-  mirror: {
-    number: "04",
-    group: "STORAGE",
-    name: "프레임리스 와이드 거울장",
-    summary: "거울의 면을 넓게 이어 시야를 확장하고 일상 용품은 문 뒤에 숨기는 수납입니다.",
-    combination: "얇은 거울 도어 · 내부 선반 · 하부 간접등",
-    reason: "장식 선을 줄이면서 수납과 조명, 공간 확장 효과를 한 면에 모을 수 있습니다.",
-    check: "문 열림 간섭, 콘센트 위치, 습기에 강한 몸통과 가장자리 마감 품질을 확인합니다.",
-    palette: ["#bbb8b0", "#dedbd2", "#5f5d58"]
-  },
-  lighting: {
-    number: "05",
-    group: "LIGHTING",
-    name: "3000K 선형 간접조명",
-    summary: "한 점을 밝히기보다 벽면을 부드럽게 씻어 내려 타일의 결을 자연스럽게 보여줍니다.",
-    combination: "천장 코브 + 거울장 하부 · 같은 색온도",
-    reason: "눈부심을 줄이고 피부색과 웜 그레이지 마감이 편안하게 보이도록 합니다.",
-    check: "등기구가 직접 보이지 않는 깊이, 방습 사양, 점검과 교체가 가능한 구조를 확인합니다.",
-    palette: ["#d6b17a", "#f1d9ad", "#9d8060"]
-  }
+const tones = window.conceptTones;
+const images = {
+  "clean-white-kitchen": "projects-assets/concept-tones/clean-white-kitchen.jpg", "clean-white-living": "projects-assets/concept-tones/clean-white-living.jpg", "clean-white-entry": "projects-assets/concept-tones/clean-white-entry.jpg", "clean-white-bathroom": "projects-assets/concept-tones/clean-white-bathroom.jpg",
+  "dark-walnut-kitchen": "projects-assets/concept-tones/dark-walnut-kitchen.jpg", "dark-walnut-living": "projects-assets/concept-tones/dark-walnut-living.jpg", "dark-walnut-entry": "projects-assets/concept-tones/dark-walnut-entry.jpg", "dark-walnut-bathroom": "projects-assets/concept-tones/dark-walnut-bathroom.jpg",
+  "charcoal-kitchen": "projects-assets/concept-tones/charcoal-kitchen.jpg", "charcoal-living": "projects-assets/concept-tones/charcoal-living.jpg", "charcoal-entry": "projects-assets/concept-tones/charcoal-entry.jpg", "charcoal-bathroom": "projects-assets/concept-tones/charcoal-bathroom.jpg",
+  "natural-ivory-kitchen": "projects-assets/concept-tones/natural-ivory-kitchen.jpg", "natural-ivory-living": "projects-assets/concept-tones/natural-ivory-living.jpg", "natural-ivory-entry": "projects-assets/concept-tones/natural-ivory-entry.jpg", "natural-ivory-bathroom": "projects-assets/concept-tones/natural-ivory-bathroom.jpg"
 };
-
-const fields = {
-  number: document.querySelector("#material-number"),
-  group: document.querySelector("#material-group"),
-  name: document.querySelector("#material-name"),
-  summary: document.querySelector("#material-summary"),
-  combination: document.querySelector("#material-combination"),
-  reason: document.querySelector("#material-reason"),
-  check: document.querySelector("#material-check"),
-  palette: document.querySelector("#material-palette")
-};
-
-const figure = document.querySelector(".concept-figure");
-const roomImage = figure.querySelector("img");
+const roomLabels = { kitchen: "주방 메인", living: "거실", entry: "현관", bathroom: "욕실" };
+const toneButtons = [...document.querySelectorAll("[data-tone]")];
+const roomPicker = document.querySelector(".room-picker");
 const materialPicker = document.querySelector(".material-picker");
-const bathroom = {
-  key: "bathroom", label: "욕실", en: "BATHROOM · A CUT",
-  title: "차분한 돌결과 따뜻한 빛",
-  formula: "웜 그레이지 타일 + 백색 도기 + 크롬 + 간접조명",
-  points: Object.values(materials).map((material, index) => ({
-    ...material, x: [80, 43, 37, 48, 29][index], y: [28, 92, 48, 25, 40][index]
-  }))
-};
-// This classic-script data file also works when the owner opens the HTML directly.
-const rooms = [...window.conceptRooms, bathroom];
-let selectedRoom = rooms[0];
+const figure = document.querySelector(".concept-figure");
+const image = figure.querySelector("img");
+const fields = ["number", "group", "name", "summary", "combination", "reason", "check"].reduce((all, key) => ({ ...all, [key]: document.querySelector(`#material-${key}`) }), {});
+let tone = tones[0]; let room = "kitchen";
 
+function points() {
+  return tone.parts.map(([group, name], index) => ({ number: String(index + 1).padStart(2, "0"), group, name, x: [27, 56, 78][index], y: [55, 38, 72][index], summary: `${tone.label}의 ${roomLabels[room]}에 어울리는 ${name} 제안입니다.`, combination: `${tone.label} 톤 · 실물 샘플 확인`, reason: "같은 무드를 유지하면서도 실제 생활 공간의 밀도를 고려합니다.", check: "평면, 통로 폭, 조명 아래의 실제 색을 현장에서 확인합니다." }));
+}
 function selectMaterial(index) {
-  const material = selectedRoom.points[index];
-  const sourceLink = document.querySelector("#material-source");
-  sourceLink.hidden = !material.source;
-  if (material.source) sourceLink.href = material.source;
-  else sourceLink.removeAttribute("href");
-  document.querySelector("#material-status").textContent = material.code ? "공식 품번 확인 · 컨셉 이미지" : "조은 디자인 제안 사양";
-  document.querySelectorAll("[data-point]").forEach((button) => {
-    const active = Number(button.dataset.point) === index;
-    button.classList.toggle("is-active", active);
-    button.setAttribute("aria-pressed", String(active));
-  });
-  Object.entries(fields).forEach(([key, element]) => {
-    if (key !== "palette") element.textContent = key === "name" && material.code ? material.name + " · " + material.code : material[key];
-  });
-  fields.palette.replaceChildren(...material.palette.map((color) => {
-    const swatch = document.createElement("span");
-    swatch.style.setProperty("--swatch", color);
-    swatch.setAttribute("aria-hidden", "true");
-    return swatch;
-  }));
+  const material = points()[index];
+  Object.entries(fields).forEach(([key, field]) => field.textContent = material[key]);
+  const palette = document.querySelector("#material-palette"); palette.replaceChildren(...tone.palette.map((color) => { const swatch = document.createElement("span"); swatch.style.setProperty("--swatch", color); return swatch; }));
+  document.querySelectorAll("[data-point]").forEach((button) => { const active = Number(button.dataset.point) === index; button.classList.toggle("is-active", active); button.setAttribute("aria-pressed", String(active)); });
 }
-
 function selectRoom(key) {
-  selectedRoom = rooms.find((room) => room.key === key);
-  roomImage.src = selectedRoom.image || ("projects-assets/concepts/concept-" + key + "-greige-01." + (key === "bathroom" ? "jpg" : "webp"));
-  roomImage.alt = selectedRoom.label + " 컨셉 이미지";
-  document.querySelectorAll("[data-room]").forEach((button) => {
-    button.setAttribute("aria-pressed", String(button.dataset.room === key));
+  room = key; image.src = images[tone.rooms[room]]; image.alt = `${tone.label} 톤 ${roomLabels[room]} 컨셉 이미지`;
+  figure.querySelector("figcaption").textContent = `${tone.label} · ${roomLabels[room]}`;
+  figure.querySelectorAll(".hotspot").forEach((node) => node.remove()); materialPicker.replaceChildren();
+  points().forEach((item, index) => {
+    const hot = document.createElement("button"); hot.type = "button"; hot.className = "hotspot"; hot.dataset.point = index; hot.style.setProperty("--x", `${item.x}%`); hot.style.setProperty("--y", `${item.y}%`); hot.textContent = index + 1; hot.setAttribute("aria-label", `${index + 1}번 ${item.name} 자재 보기`);
+    const list = document.createElement("button"); list.type = "button"; list.dataset.point = index; list.textContent = `${index + 1} · ${item.group}`;
+    [hot, list].forEach((node) => node.addEventListener("click", () => selectMaterial(index))); figure.append(hot); materialPicker.append(list);
   });
-  figure.querySelectorAll(".hotspot").forEach((button) => button.remove());
-  materialPicker.replaceChildren();
-  selectedRoom.points.forEach((material, index) => {
-    const hotspot = document.createElement("button");
-    hotspot.type = "button";
-    hotspot.className = "hotspot";
-    hotspot.style.setProperty("--x", material.x + "%");
-    hotspot.style.setProperty("--y", material.y + "%");
-    hotspot.textContent = String(index + 1);
-    hotspot.setAttribute("aria-label", (index + 1) + "번 " + material.name + " 자재 보기");
-    const listButton = document.createElement("button");
-    listButton.type = "button";
-    listButton.textContent = (index + 1) + " · " + material.group;
-    [hotspot, listButton].forEach((button) => {
-      button.dataset.point = String(index);
-      button.setAttribute("aria-controls", "material-detail");
-      button.addEventListener("click", () => selectMaterial(index));
-    });
-    figure.append(hotspot);
-    materialPicker.append(listButton);
-  });
-  selectMaterial(0);
+  roomPicker.querySelectorAll("[data-room]").forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.room === room))); selectMaterial(0);
 }
-document.querySelectorAll("[data-room]").forEach((button) => {
-  button.addEventListener("click", () => selectRoom(button.dataset.room));
-});
-selectRoom("kitchen");
+function selectTone(key, move) {
+  tone = tones.find((item) => item.key === key);
+  toneButtons.forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.tone === key)));
+  document.querySelector("#tone-summary").textContent = `${tone.label} · ${tone.summary}`;
+  document.querySelector("#tone-range").textContent = `현실 적용 기준 · ${tone.range}`;
+  roomPicker.replaceChildren(...Object.keys(roomLabels).map((key, index) => { const button = document.createElement("button"); button.type = "button"; button.dataset.room = key; button.setAttribute("aria-pressed", String(index === 0)); const thumb = document.createElement("img"); thumb.src = images[tone.rooms[key]]; thumb.alt = ""; thumb.width = 1280; thumb.height = 853; thumb.loading = "lazy"; const label = document.createElement("span"); label.textContent = `${String(index + 1).padStart(2, "0")} · ${roomLabels[key]}`; button.append(thumb, label); button.addEventListener("click", () => selectRoom(key)); return button; }));
+  selectRoom("kitchen"); if (move) document.querySelector(".explorer").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+toneButtons.forEach((button) => button.addEventListener("click", () => selectTone(button.dataset.tone, true)));
+selectTone(tone.key, false);
